@@ -2,26 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : CharacterMovement
 {
-    public float moveSpeed = 5f;
-    private Rigidbody2D _rb;
-    private Vector2 _movement;
-
-    void Start()
+    protected override void HandleMovement()
     {
-        _rb = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
-        _movement = _movement.normalized;
-    }
-
-    void FixedUpdate()
-    {
-        _rb.velocity = _movement * moveSpeed;
+        _movement.x = (Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0);
+        _movement.y = (Input.GetKey(KeyCode.W) ? 1 : 0) - (Input.GetKey(KeyCode.S) ? 1 : 0);
+        _movement.Normalize(); 
     }
 }
