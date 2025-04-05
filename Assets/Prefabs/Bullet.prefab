@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5861947434227734314}
-  - component: {fileID: -5120749740729382198}
+  - component: {fileID: 3967497184410033869}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,8 +32,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &-5120749740729382198
-PolygonCollider2D:
+--- !u!58 &3967497184410033869
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -65,23 +65,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.32333067, y: 0.39617622}
-      - {x: -0.6413121, y: 0.3918985}
-      - {x: -0.9172381, y: 0.20264253}
-      - {x: -0.79033583, y: 0.12144962}
-      - {x: -0.6287372, y: 0.019066721}
-      - {x: -0.48300666, y: 0.016467392}
-      - {x: 0.3944105, y: 0.015303157}
-      - {x: 0.39940315, y: 0.3870095}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Radius: 0.5
