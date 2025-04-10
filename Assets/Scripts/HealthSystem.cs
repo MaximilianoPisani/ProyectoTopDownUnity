@@ -20,7 +20,7 @@ public class HealthSystem : MonoBehaviour
 
         _currentHealth -= damage;
         _canTakeDamage = false;
-        Invoke(nameof(ResetDamageCooldown), DamageCooldown);
+        StartCoroutine(DamageCooldownRoutine()); 
 
         if (_currentHealth <= 0)
         {
@@ -28,14 +28,15 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    protected void ResetDamageCooldown()
+    private IEnumerator DamageCooldownRoutine()
     {
+        yield return new WaitForSeconds(DamageCooldown);
         _canTakeDamage = true;
     }
 
     protected virtual void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false); 
     }
 
     public int GetCurrentHealth()
