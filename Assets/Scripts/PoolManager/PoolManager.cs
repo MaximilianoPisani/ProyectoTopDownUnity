@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PoolManager : MonoBehaviour
 {
     public static PoolManager Instance;
@@ -17,6 +16,7 @@ public class PoolManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+  
     public GameObject GetFromPool(GameObject prefab)
     {
         string key = prefab.name;
@@ -36,6 +36,15 @@ public class PoolManager : MonoBehaviour
             newObj.name = key; 
             return newObj;
         }
+    }
+
+    
+    public GameObject GetFromPool(GameObject prefab, Vector3 position, Quaternion rotation)
+    {
+        GameObject obj = GetFromPool(prefab);
+        obj.transform.position = position;
+        obj.transform.rotation = rotation;
+        return obj;
     }
 
     public void ReturnToPool(GameObject obj)
