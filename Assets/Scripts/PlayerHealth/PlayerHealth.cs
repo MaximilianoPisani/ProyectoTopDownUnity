@@ -7,8 +7,6 @@ public class PlayerHealth : HealthSystem
 {
     protected override void Die()
     {
-        
-        gameObject.SetActive(false);
-       
+        gameObject.SetActive(false); 
     }
 }
