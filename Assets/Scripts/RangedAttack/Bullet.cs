@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 10;
+    public int damage = 2;
     public float lifetime = 3f;
     public LayerMask targetLayer;
 
-    private void Start()
+    private float _timer;
+
+    private void OnEnable()
     {
-        
-        Destroy(gameObject, lifetime);
+        _timer = 0f; 
+    }
+
+    private void Update()
+    {
+        _timer += Time.deltaTime;
+        if (_timer >= lifetime)
+        {
+            ReturnToPool();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,13 +34,14 @@ public class Bullet : MonoBehaviour
             {
                 health.TakeDamage(damage);
             }
+        }
 
-            Destroy(gameObject);
-        }
-        else
-        {
-            
-            Destroy(gameObject);
-        }
+        ReturnToPool(); 
+    }
+
+    private void ReturnToPool()
+    {
+        gameObject.SetActive(false); 
+        PoolManager.Instance.ReturnToPool(gameObject); 
     }
 }
