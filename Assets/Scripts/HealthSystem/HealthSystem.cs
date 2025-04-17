@@ -4,43 +4,19 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int MaxHealth = 100;
-    protected int _currentHealth;
-    protected bool _canTakeDamage = true;
-    public float DamageCooldown = 1f;
+    public int health = 6;
 
-    protected virtual void Start()
+    public void TakeDamage(int amount)
     {
-        _currentHealth = MaxHealth;
-    }
-
-    public virtual void TakeDamage(int damage)
-    {
-        if (!_canTakeDamage) return;
-
-        _currentHealth -= damage;
-        _canTakeDamage = false;
-        StartCoroutine(DamageCooldownRoutine()); 
-
-        if (_currentHealth <= 0)
+        health -= amount;
+        if (health <= 0)
         {
             Die();
         }
     }
 
-    private IEnumerator DamageCooldownRoutine()
-    {
-        yield return new WaitForSeconds(DamageCooldown);
-        _canTakeDamage = true;
-    }
-
     protected virtual void Die()
     {
-        gameObject.SetActive(false); 
-    }
-
-    public int GetCurrentHealth()
-    {
-        return _currentHealth;
+        Destroy(gameObject);
     }
 }
