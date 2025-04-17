@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 2;
+    public int damage = 10;
     public float lifetime = 3f;
     public LayerMask targetLayer;
 
-    private float _timer;
+    private float timer;
 
     private void OnEnable()
     {
-        _timer = 0f; 
+        timer = 0f; 
     }
 
     private void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer >= lifetime)
+        timer += Time.deltaTime;
+        if (timer >= lifetime)
         {
-            ReturnToPool();
+            PoolManager.Instance.ReturnToPool(gameObject);
         }
     }
 
@@ -36,12 +36,7 @@ public class Bullet : MonoBehaviour
             }
         }
 
-        ReturnToPool(); 
-    }
-
-    private void ReturnToPool()
-    {
-        gameObject.SetActive(false); 
-        PoolManager.Instance.ReturnToPool(gameObject); 
+        
+        PoolManager.Instance.ReturnToPool(gameObject);
     }
 }
