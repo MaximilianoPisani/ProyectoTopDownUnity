@@ -19,14 +19,18 @@ public class PlayerMovement : CharacterMovement
 
         _movement = _movement.normalized;
 
-        if (_movement != Vector2.zero)
+        bool isMoving = _movement != Vector2.zero;
+
+        
+        if (isMoving)
         {
             _lastDirection = _movement;
         }
 
+        
         _animatorHandler.SetFloat("X", _movement.x);
         _animatorHandler.SetFloat("Y", _movement.y);
-        _animatorHandler.SetBool("Moving", _movement != Vector2.zero);
+        _animatorHandler.SetBool("Moving", isMoving);
         _animatorHandler.SetFloat("LastX", _lastDirection.x);
         _animatorHandler.SetFloat("LastY", _lastDirection.y);
     }

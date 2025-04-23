@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health = 6;
+    public int maxHealth = 6;
+    protected int health;
+
+    protected virtual void Start()
+    {
+        health = maxHealth;
+    }
 
     public void TakeDamage(int amount)
     {
