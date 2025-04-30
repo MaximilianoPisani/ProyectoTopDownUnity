@@ -24,7 +24,9 @@ public class PlayerMovement : CharacterMovement
         
         if (isMoving)
         {
+
             _lastDirection = _movement;
+
         }
 
         

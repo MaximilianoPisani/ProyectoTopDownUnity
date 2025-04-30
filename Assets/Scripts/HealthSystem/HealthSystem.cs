@@ -7,12 +7,15 @@ public class HealthSystem : MonoBehaviour
     public int maxHealth = 6;
     protected int health;
 
+    public int CurrentHealth => health;
+    public int MaxHealth => maxHealth;
+
     protected virtual void Start()
     {
         health = maxHealth;
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
     {
         health -= amount;
         if (health <= 0)

@@ -7,6 +7,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject CurrentWeapon;
     private AnimationControllerHandler _animator;
 
+
     private void Start()
     {
         _animator = GetComponent<AnimationControllerHandler>();
