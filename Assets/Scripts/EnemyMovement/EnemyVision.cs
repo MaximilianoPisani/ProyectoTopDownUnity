@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class EnemyVision : MonoBehaviour
 {
     [SerializeField] private EnemyMovement _enemyMovement;
     private CircleCollider2D _circleCollider2D;
+    private const float Buffer = 1.1f;
     private void Start()
     {
         _circleCollider2D = GetComponent<CircleCollider2D>();
@@ -17,8 +19,9 @@ public class EnemyVision : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         var playerDirection = other.transform.position - transform.position;
-        var layer = -(1 << LayerMask.NameToLayer("Ignore Raycast"));
-        var rayCast = Physics2D.Raycast(transform.position, playerDirection, 4, layer);
+        var layer = ~(1 << LayerMask.NameToLayer("Ignore Raycast") |  1 << LayerMask.NameToLayer("Enemy"));
+        var rayCast = Physics2D.Raycast(transform.position, playerDirection, _circleCollider2D.radius * Buffer, layer);
+        Debug.DrawRay(transform.position, playerDirection.normalized * _circleCollider2D.radius * Buffer);
         if (rayCast.collider == null) return;
 
 

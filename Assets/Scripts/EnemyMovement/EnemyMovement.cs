@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Transform _target;
+    [SerializeField] private Transform _target;
     private NavMeshAgent _agent;
     private Vector2 _startPosition;
     void Start()
@@ -24,13 +24,6 @@ public class EnemyMovement : MonoBehaviour
         _agent.SetDestination(_target.position);
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            _target = other.transform;
-        }
-    }
     public void SetTarget(Transform target)
     {
 
