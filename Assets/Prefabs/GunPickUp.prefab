@@ -144,10 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d94e5741bf0ed84ea057bf56d484ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponName: Gun
+  WeaponName: Sword
   AttackType: {fileID: 0}
   IsEquipped: 0
-  Type: 1
 --- !u!50 &7516532593176958051
 Rigidbody2D:
   serializedVersion: 4

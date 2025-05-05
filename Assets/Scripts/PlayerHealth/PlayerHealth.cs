@@ -11,6 +11,8 @@ public class PlayerHealth : HealthSystem
     private AnimationControllerHandler _animatorHandler;
     private Rigidbody2D _rb;
     private DamageFeedbackHandler _feedbackHandler;
+    private AttackMelee _attackMelee;
+
     private bool _isInvulnerable = false;
 
     private void Awake()
@@ -19,6 +21,7 @@ public class PlayerHealth : HealthSystem
         _animatorHandler = GetComponent<AnimationControllerHandler>();
         _rb = GetComponent<Rigidbody2D>();
         _feedbackHandler = GetComponent<DamageFeedbackHandler>();
+        _attackMelee = GetComponent<AttackMelee>();
     }
 
     protected override void Start()
@@ -30,13 +33,14 @@ public class PlayerHealth : HealthSystem
 
     public override void TakeDamage(int amount)
     {
-        if (_isInvulnerable)
-            return;
+        if (_isInvulnerable || IsDead()) return;
 
         base.TakeDamage(amount);
 
         if (_healthBar != null)
+        {
             _healthBar.ChangeCurrentHealth(health);
+        }
 
         if (health <= 0)
         {
@@ -44,10 +48,20 @@ public class PlayerHealth : HealthSystem
         }
         else
         {
-            _isInvulnerable = true;
-            if (_feedbackHandler != null)
-                StartCoroutine(_feedbackHandler.PlayFeedback(() => _isInvulnerable = false));
+            StartCoroutine(PlayDamageFeedback());
         }
+    }
+
+    private IEnumerator PlayDamageFeedback()
+    {
+        _isInvulnerable = true;
+
+        if (_feedbackHandler != null)
+        {
+            yield return StartCoroutine(_feedbackHandler.PlayFeedback());
+        }
+
+        _isInvulnerable = false;
     }
 
     protected override void Die()
@@ -75,6 +89,9 @@ public class PlayerHealth : HealthSystem
             _rb.bodyType = RigidbodyType2D.Kinematic;
         }
 
+        if (_attackMelee != null)
+            _attackMelee.SetAliveState(false);
+
         yield return new WaitForSeconds(1f);
 
         Respawn();
@@ -91,7 +108,16 @@ public class PlayerHealth : HealthSystem
     {
         transform.position = CheckpointManager.Instance.GetCheckpointPosition();
         health = maxHealth;
+
+        if (_attackMelee != null)
+            _attackMelee.SetAliveState(true); 
+
         if (_healthBar != null)
             _healthBar.ChangeCurrentHealth(health);
+    }
+
+    public bool IsDead()
+    {
+        return health <= 0;
     }
 }

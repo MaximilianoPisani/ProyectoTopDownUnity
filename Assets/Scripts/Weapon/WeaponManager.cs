@@ -7,18 +7,16 @@ public class WeaponManager : MonoBehaviour
     public GameObject CurrentWeapon;
     private AnimationControllerHandler _animator;
 
-
     private void Start()
     {
         _animator = GetComponent<AnimationControllerHandler>();
     }
 
-    
     public void EquipWeapon(GameObject newWeapon)
     {
         if (CurrentWeapon != null)
         {
-            DropWeapon();  
+            DropWeapon();
         }
 
         CurrentWeapon = newWeapon;
@@ -26,11 +24,15 @@ public class WeaponManager : MonoBehaviour
         weaponScript.IsEquipped = true;
         CurrentWeapon.SetActive(true);
 
-        
         _animator.SetBool("HasGun", true);
+
+        var attackMelee = GetComponent<AttackMelee>();
+        if (attackMelee != null)
+        {
+            attackMelee.canAttack = true;
+        }
     }
 
-   
     public void DropWeapon()
     {
         if (CurrentWeapon != null)
@@ -39,10 +41,14 @@ public class WeaponManager : MonoBehaviour
             weaponScript.IsEquipped = false;
             CurrentWeapon.SetActive(false);
 
-          
             _animator.SetBool("HasGun", false);
 
-           
+            var attackMelee = GetComponent<AttackMelee>();
+            if (attackMelee != null)
+            {
+                attackMelee.canAttack = false;
+            }
+
             PoolManager.Instance.ReturnToPool(CurrentWeapon);
             CurrentWeapon = null;
         }
