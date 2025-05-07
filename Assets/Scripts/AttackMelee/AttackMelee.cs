@@ -9,7 +9,7 @@ public class AttackMelee : MonoBehaviour
     [SerializeField] private LayerMask targetLayer;
     [SerializeField] private int damage = 1;
     [SerializeField] protected float attackCooldown = 1.0f;
-    [SerializeField] private float stunDuration = 1.5f; 
+    [SerializeField] private float stunDuration = 1.5f;
 
     protected AnimationControllerHandler _animatorHandler;
     private float _lastAttackTime;
@@ -68,7 +68,7 @@ public class AttackMelee : MonoBehaviour
                 EnemyMovement enemyMovement = hit.GetComponent<EnemyMovement>();
                 if (enemyMovement != null)
                 {
-                    enemyMovement.ApplyStun(stunDuration); 
+                    enemyMovement.ApplyStun(stunDuration);
                 }
             }
         }
@@ -99,5 +99,6 @@ public class AttackMelee : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         }
+
     }
 }

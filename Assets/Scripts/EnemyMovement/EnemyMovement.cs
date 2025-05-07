@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float attackRange = 1.2f;
-    [SerializeField] private float stunDuration = 1f; 
+   
 
     private Transform _target;
     private AnimationControllerHandler _animHandler;

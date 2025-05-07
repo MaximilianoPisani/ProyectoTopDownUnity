@@ -6,7 +6,7 @@ public class PlayerMeleeAttack : AttackMelee
 {
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             TryAttack();
         }
