@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackMelee : MonoBehaviour
 {
+    [SerializeField] protected AttackData _attackData;
     [SerializeField] protected Transform attackPoint;
-    [SerializeField] protected float attackRange = 0.5f;
     [SerializeField] private LayerMask targetLayer;
-    [SerializeField] private int damage = 1;
-    [SerializeField] protected float attackCooldown = 1.0f;
-    [SerializeField] private float stunDuration = 1.5f;
-
     protected AnimationControllerHandler _animatorHandler;
     private float _lastAttackTime;
     private bool _isAlive = true;
@@ -27,12 +24,12 @@ public class AttackMelee : MonoBehaviour
     {
         _isAlive = state;
     }
-
     public void TryAttack()
     {
         if (!canAttack || !_isAlive) return;
 
-        if (Time.time < _lastAttackTime + attackCooldown) return;
+     
+        if (Time.time < _lastAttackTime + _attackData.Cooldown) return;
 
         _lastAttackTime = Time.time;
 
@@ -46,7 +43,8 @@ public class AttackMelee : MonoBehaviour
 
         UpdateAttackPointPosition();
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, targetLayer);
+        
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, _attackData.AttackRange, targetLayer);
 
         foreach (Collider2D hit in hits)
         {
@@ -57,18 +55,18 @@ public class AttackMelee : MonoBehaviour
             float angle = Vector2.Angle(lastLookDirection.normalized, directionToTarget.normalized);
             if (angle > 60f) continue;
 
-            if (directionToTarget.magnitude <= attackRange)
+            if (directionToTarget.magnitude <= _attackData.AttackRange)
             {
                 HealthSystem health = hit.GetComponent<HealthSystem>();
                 if (health != null)
                 {
-                    health.TakeDamage(damage);
+                    health.TakeDamage(Mathf.RoundToInt(_attackData.Damage)); 
                 }
 
                 EnemyMovement enemyMovement = hit.GetComponent<EnemyMovement>();
                 if (enemyMovement != null)
                 {
-                    enemyMovement.ApplyStun(stunDuration);
+                    enemyMovement.ApplyStun(_attackData.StunDuration); 
                 }
             }
         }
@@ -97,7 +95,7 @@ public class AttackMelee : MonoBehaviour
         if (attackPoint != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+            Gizmos.DrawWireSphere(attackPoint.position, _attackData.AttackRange);
         }
 
     }

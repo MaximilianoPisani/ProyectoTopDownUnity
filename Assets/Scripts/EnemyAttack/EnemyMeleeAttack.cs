@@ -6,8 +6,10 @@ public class EnemyMeleeAttack : AttackMelee
 {
     private Transform _target;
 
-    [SerializeField] private int attackDamage = 10;
+      public AttackData AttackData => _attackData;
 
+   
+    public float AttackRange => _attackData.AttackRange;
 
     private float attackTimer = 0f;
 
@@ -17,14 +19,12 @@ public class EnemyMeleeAttack : AttackMelee
         {
             float distance = Vector2.Distance(transform.position, _target.position);
 
-            if (distance < 1.2f)
+            if (distance <= _attackData.AttackRange)
             {
-
                 if (attackTimer <= 0f)
                 {
-
                     _animatorHandler.SetBool("isAttacking", true);
-                    attackTimer = attackCooldown;
+                    attackTimer = _attackData.Cooldown;  
                 }
             }
             else
@@ -33,7 +33,7 @@ public class EnemyMeleeAttack : AttackMelee
             }
         }
 
-
+       
         if (attackTimer > 0f)
         {
             attackTimer -= Time.deltaTime;
@@ -79,7 +79,7 @@ public class EnemyMeleeAttack : AttackMelee
             PlayerHealth playerHealth = _target.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(attackDamage);
+                playerHealth.TakeDamage((int)_attackData.Damage);
             }
         }
     }

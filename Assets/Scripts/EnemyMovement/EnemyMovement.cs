@@ -5,16 +5,15 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float attackRange = 1.2f;
-   
+    [SerializeField] private float _moveSpeed = 3f;
 
     private Transform _target;
     private AnimationControllerHandler _animHandler;
     private NavMeshAgent _agent;
+    private EnemyMeleeAttack _enemyAttack;
 
-    private bool isStunned = false;
-    private float stunTimer = 0f;
+    private bool _isStunned = false;
+    private float _stunTimer = 0f;
 
     public Transform CurrentTarget => _target;
 
@@ -22,23 +21,20 @@ public class EnemyMovement : MonoBehaviour
     {
         _animHandler = GetComponent<AnimationControllerHandler>();
         _agent = GetComponent<NavMeshAgent>();
+        _enemyAttack = GetComponent<EnemyMeleeAttack>();
 
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
-
-        _agent.speed = moveSpeed;
+        _agent.speed = _moveSpeed;
         _agent.avoidancePriority = Random.Range(30, 70);
     }
 
     private void Update()
     {
-        if (isStunned)
+        if (_isStunned)
         {
-            stunTimer -= Time.deltaTime;
-            if (stunTimer <= 0f)
-            {
-                isStunned = false;
-            }
+            _stunTimer -= Time.deltaTime;
+            if (_stunTimer <= 0f) _isStunned = false;
 
             _agent.ResetPath();
             _animHandler.SetBool("Moving", false);
@@ -56,53 +52,51 @@ public class EnemyMovement : MonoBehaviour
 
         float distanceToTarget = Vector2.Distance(transform.position, _target.position);
 
-        if (distanceToTarget <= attackRange)
+
+        if (distanceToTarget <= _enemyAttack.AttackRange)
         {
             _agent.ResetPath();
-
-            Vector2 direction = (_target.position - transform.position).normalized;
-
-            _animHandler.SetFloat("X", direction.x);
-            _animHandler.SetFloat("Y", direction.y);
-            _animHandler.SetFloat("LastX", direction.x);
-            _animHandler.SetFloat("LastY", direction.y);
-
-            _animHandler.SetBool("Moving", false);
-            _animHandler.SetBool("isAttacking", true);
+            FaceTargetAndAnimateAttack();
         }
         else
         {
             _agent.SetDestination(_target.position);
-
-            Vector2 velocity = _agent.velocity.normalized;
-
-            _animHandler.SetFloat("X", velocity.x);
-            _animHandler.SetFloat("Y", velocity.y);
-            _animHandler.SetFloat("LastX", velocity.x);
-            _animHandler.SetFloat("LastY", velocity.y);
-
-            _animHandler.SetBool("Moving", true);
-            _animHandler.SetBool("isAttacking", false);
+            AnimateMovement();
         }
     }
 
-    public void SetTarget(Transform target)
+    private void FaceTargetAndAnimateAttack()
     {
-        _target = target;
+        Vector2 dir = (_target.position - transform.position).normalized;
+        _animHandler.SetFloat("X", dir.x);
+        _animHandler.SetFloat("Y", dir.y);
+        _animHandler.SetFloat("LastX", dir.x);
+        _animHandler.SetFloat("LastY", dir.y);
+        _animHandler.SetBool("Moving", false);
+        _animHandler.SetBool("isAttacking", true);
     }
 
-    public void RemoveTarget()
+    private void AnimateMovement()
     {
-        _target = null;
+        Vector2 vel = _agent.velocity.normalized;
+        _animHandler.SetFloat("X", vel.x);
+        _animHandler.SetFloat("Y", vel.y);
+        _animHandler.SetFloat("LastX", vel.x);
+        _animHandler.SetFloat("LastY", vel.y);
+        _animHandler.SetBool("Moving", true);
+        _animHandler.SetBool("isAttacking", false);
     }
+
+    public void SetTarget(Transform target) => _target = target;
+    public void RemoveTarget() => _target = null;
 
     public void ApplyStun(float duration)
     {
-        isStunned = true;
-        stunTimer = duration;
+        _isStunned = true;
+        _stunTimer = duration;
         _agent.ResetPath();
-
         _animHandler.SetBool("Moving", false);
         _animHandler.SetBool("isAttacking", false);
     }
+
 }
