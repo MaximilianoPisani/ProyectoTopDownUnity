@@ -77,7 +77,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.2777778
-    functionName: OnTriggerEnter2D
+    functionName: ApplyDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

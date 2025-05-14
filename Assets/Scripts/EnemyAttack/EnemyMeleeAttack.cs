@@ -5,76 +5,32 @@ using UnityEngine;
 public class EnemyMeleeAttack : AttackMelee
 {
     private Transform _target;
-
-      public AttackData AttackData => _attackData;
-
-   
     public float AttackRange => _attackData.AttackRange;
-
-    private float attackTimer = 0f;
-
-    private void Update()
-    {
-        if (_target != null)
-        {
-            float distance = Vector2.Distance(transform.position, _target.position);
-
-            if (distance <= _attackData.AttackRange)
-            {
-                if (attackTimer <= 0f)
-                {
-                    _animatorHandler.SetBool("isAttacking", true);
-                    attackTimer = _attackData.Cooldown;  
-                }
-            }
-            else
-            {
-                _animatorHandler.SetBool("isAttacking", false);
-            }
-        }
-
-       
-        if (attackTimer > 0f)
-        {
-            attackTimer -= Time.deltaTime;
-        }
-    }
+    public AttackData AttackData => _attackData;
 
     public void SetTarget(Transform target)
     {
         _target = target;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void UpdateAttack()
     {
-        if (other.CompareTag("Player"))
+        if (_target == null) return;
+
+        float distance = Vector2.Distance(transform.position, _target.position);
+
+        if (distance <= AttackRange)
         {
-
-            SetTarget(other.transform);
-
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-
-                ApplyDamage();
-            }
+            base.TryAttack();
         }
     }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-
-            SetTarget(null);
-            _animatorHandler.SetBool("isAttacking", false);
-        }
-    }
-
-
     public void ApplyDamage()
     {
-        if (_target != null)
+        if (_target == null) return;
+
+        float distance = Vector2.Distance(transform.position, _target.position);
+
+        if (distance <= AttackRange)
         {
             PlayerHealth playerHealth = _target.GetComponent<PlayerHealth>();
             if (playerHealth != null)
@@ -82,5 +38,21 @@ public class EnemyMeleeAttack : AttackMelee
                 playerHealth.TakeDamage((int)_attackData.Damage);
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SetTarget(other.transform);
+            GetComponent<EnemyMovement>().SetTarget(other.transform);
+            GetComponent<EnemyMovement>().ChangeState(new EnemyAttackState());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+            SetTarget(null);
     }
 }

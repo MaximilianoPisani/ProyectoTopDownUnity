@@ -6,7 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class EnemyVision : MonoBehaviour
 {
-    public Transform target; 
     public EnemyMovement enemyMovement;
     public EnemyMeleeAttack enemyMeleeAttack;
 
@@ -16,22 +15,18 @@ public class EnemyVision : MonoBehaviour
         col.isTrigger = true;
 
         if (enemyMovement == null)
-        {
             enemyMovement = GetComponentInParent<EnemyMovement>();
-        }
 
         if (enemyMeleeAttack == null)
-        {
             enemyMeleeAttack = GetComponentInParent<EnemyMeleeAttack>();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            enemyMovement.SetTarget(target);  
-            enemyMeleeAttack.SetTarget(other.transform);  
+            enemyMovement.OnTargetEnterVision(other.transform);
+            enemyMeleeAttack.SetTarget(other.transform);
         }
     }
 
@@ -39,9 +34,8 @@ public class EnemyVision : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
-            enemyMovement.RemoveTarget();  
-            enemyMeleeAttack.SetTarget(null);  
+            enemyMovement.OnTargetExitVision();
+            enemyMeleeAttack.SetTarget(null);
         }
     }
 }

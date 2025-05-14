@@ -6,6 +6,7 @@ public class PlayerMovement : CharacterMovement
 {
     private AnimationControllerHandler _animatorHandler;
     private Vector2 _lastDirection = Vector2.down;
+    [SerializeField] private AttackData _playerAttackData;
 
     void Start()
     {
@@ -31,5 +32,11 @@ public class PlayerMovement : CharacterMovement
         _animatorHandler.SetBool("Moving", isMoving);
         _animatorHandler.SetFloat("LastX", _lastDirection.x);
         _animatorHandler.SetFloat("LastY", _lastDirection.y);
+    }
+
+    public void ApplyAttack()
+    {
+        float attackRange = _playerAttackData.AttackRange;
+        float damage = _playerAttackData.Damage;
     }
 }

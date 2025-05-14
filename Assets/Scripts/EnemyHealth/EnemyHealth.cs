@@ -28,14 +28,17 @@ public class EnemyHealth : HealthSystem
 
     public override void TakeDamage(int amount)
     {
-        if (_isDead || _isInvulnerable)
-            return;
+        if (_isDead || _isInvulnerable) return;
 
         base.TakeDamage(amount);
 
-        if (!_isDead && _feedbackHandler != null)
+        if (!_isDead)
         {
-            StartCoroutine(DamageFeedbackCoroutine());
+            if (_feedbackHandler != null)
+                StartCoroutine(DamageFeedbackCoroutine());
+
+            if (_movement != null)
+                _movement.DisableMovement();
         }
     }
 
@@ -62,17 +65,13 @@ public class EnemyHealth : HealthSystem
         _isDead = true;
         _isInvulnerable = false;
 
-
         if (_agent != null)
         {
             _agent.isStopped = true;
             _agent.velocity = Vector3.zero;
         }
-
         if (_rb != null)
-        {
             _rb.velocity = Vector2.zero;
-        }
 
         if (_movement != null) _movement.enabled = false;
         if (_meleeAttack != null) _meleeAttack.enabled = false;
@@ -80,9 +79,7 @@ public class EnemyHealth : HealthSystem
         Transform target = _movement != null ? _movement.CurrentTarget : null;
         Vector2 direction = Vector2.zero;
         if (target != null)
-        {
             direction = ((Vector2)(target.position - transform.position)).normalized;
-        }
 
         _animHandler.SetBool("isDead", true);
         _animHandler.SetFloat("LastX", direction.x);
