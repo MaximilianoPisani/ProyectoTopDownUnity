@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyDamageFeedbackHandler : MonoBehaviour
+public class EnemyDamageFeedbackHandler : MonoBehaviour //#test
 {
     [SerializeField] private float _invulnerabilityDuration = 1f;
     [SerializeField] private float _flashInterval = 0.1f;

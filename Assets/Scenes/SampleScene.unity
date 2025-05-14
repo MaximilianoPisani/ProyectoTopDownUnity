@@ -52892,6 +52892,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1963562767662979723, guid: da48c868c63bf0c4dacdc9a5931ee038, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963562767662979723, guid: da48c868c63bf0c4dacdc9a5931ee038, type: 3}
       propertyPath: _attackData
       value: 
       objectReference: {fileID: 11400000, guid: b235c36cf450c104da1acde5c7ad9ffa, type: 2}
@@ -53101,7 +53105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3807495457323499048, guid: da48c868c63bf0c4dacdc9a5931ee038, type: 3}
       propertyPath: m_Radius
-      value: 1.4284426
+      value: 1.6082817
       objectReference: {fileID: 0}
     - target: {fileID: 3807495457323499048, guid: da48c868c63bf0c4dacdc9a5931ee038, type: 3}
       propertyPath: m_IsTrigger
@@ -53161,7 +53165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480836014625170877, guid: da48c868c63bf0c4dacdc9a5931ee038, type: 3}
       propertyPath: maxHealth
-      value: 111
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7428626461621750523, guid: da48c868c63bf0c4dacdc9a5931ee038, type: 3}
       propertyPath: m_Name
