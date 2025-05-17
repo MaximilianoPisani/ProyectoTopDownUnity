@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 531380e02d0a87146b075f358ec9d86d
+guid: 4fc7e0476d3284d4d9bf35e181c58ee8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tiles-ruta_0
+      name: tiles-ruta3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 98
-        width: 48
-        height: 58
+        y: 457
+        width: 141
+        height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 438259eca02b8274884c5471a98e91de
-      internalID: -1059870628
+      spriteID: 3922c4bfeb4431a4495e21e529919cc5
+      internalID: 335505727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles-ruta_1
+      name: tiles-ruta3_1
       rect:
         serializedVersion: 2
-        x: 98
-        y: 98
-        width: 48
-        height: 58
+        x: 144
+        y: 457
+        width: 141
+        height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8d289f44042e7448bbd0cfda110ac8e
-      internalID: 1911514193
+      spriteID: 71d73182741d4e24fba93e42a82f4374
+      internalID: 242209133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles-ruta_2
+      name: tiles-ruta3_2
       rect:
         serializedVersion: 2
-        x: 147
-        y: 98
-        width: 68
-        height: 58
+        x: 286
+        y: 454
+        width: 141
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7ed5b2913c660b42a13a14e3df3649a
-      internalID: 690991334
+      spriteID: 0fc05f691e9b2454dbbfd0e09fdadb75
+      internalID: -228417575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles-ruta_3
+      name: tiles-ruta3_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 49
-        width: 58
-        height: 48
+        x: 428
+        y: 457
+        width: 141
+        height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,83 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4b098aedf34cf74ab708f13002edf8b
-      internalID: 209661734
+      spriteID: 07200e229174b504c95be893b7de6fb3
+      internalID: 1280968206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles-ruta_4
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 49
-        width: 58
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c59145b02d762134ca87c200c6963542
-      internalID: -686807762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tiles-ruta_5
-      rect:
-        serializedVersion: 2
-        x: 118
-        y: 49
-        width: 26
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a63740383f08c4428b0c65ad23e20a1
-      internalID: -822430196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tiles-ruta_6
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 65
-        width: 48
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06666174af0b478408665a3448510e88
-      internalID: -564143058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tiles-ruta_7
+      name: tiles-ruta3_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 88
-        height: 47
+        y: 311
+        width: 171
+        height: 141
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,8 +195,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5acafe991ac21147ad300d542407c29
-      internalID: -2124874048
+      spriteID: 8c260b66024b2f849a337acafab035fc
+      internalID: 1021643234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-ruta3_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 311
+        width: 171
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea449d7f7b7da3b40a39edb8aa71a6f1
+      internalID: -178065597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-ruta3_6
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 304
+        width: 78
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8fa0490bd5a5df4f9828bde1f2dab09
+      internalID: 2009993504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-ruta3_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 360
+        width: 144
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a48e58bbae8a149b8e1d178fe7bfe0
+      internalID: 1189606268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-ruta3_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 169
+        width: 264
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd12d15b28897648a1d6f0ca58d4612
+      internalID: -1901427052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-ruta3_9
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 153
+        width: 174
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ec0c46bba36144c99f585416f478f2
+      internalID: -1054380746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles-ruta3_10
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 153
+        width: 174
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d37f52bb48f4a419af9f3f5f2b9564
+      internalID: -878556369
       vertices: []
       indices: 
       edges: []
@@ -275,14 +338,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tiles-ruta_0: -1059870628
-      tiles-ruta_1: 1911514193
-      tiles-ruta_2: 690991334
-      tiles-ruta_3: 209661734
-      tiles-ruta_4: -686807762
-      tiles-ruta_5: -822430196
-      tiles-ruta_6: -564143058
-      tiles-ruta_7: -2124874048
+      tiles-ruta3_0: 335505727
+      tiles-ruta3_1: 242209133
+      tiles-ruta3_10: -878556369
+      tiles-ruta3_2: -228417575
+      tiles-ruta3_3: 1280968206
+      tiles-ruta3_4: 1021643234
+      tiles-ruta3_5: -178065597
+      tiles-ruta3_6: 2009993504
+      tiles-ruta3_7: 1189606268
+      tiles-ruta3_8: -1901427052
+      tiles-ruta3_9: -1054380746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
