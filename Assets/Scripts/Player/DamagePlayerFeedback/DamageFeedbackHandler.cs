@@ -18,7 +18,7 @@ public class DamageFeedbackHandler : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public IEnumerator PlayFeedback(System.Action onComplete = null) // Coroutine to play damage feedback (invulnerability + flashing)
+    public IEnumerator PlayFeedback() // Coroutine to play damage feedback for the player (invulnerability + flashing)
     {
         if (_playerController != null)
             _playerController.enabled = false;
@@ -43,6 +43,6 @@ public class DamageFeedbackHandler : MonoBehaviour
         if (_playerController != null)
             _playerController.enabled = true;
 
-        onComplete?.Invoke();
+      
     }
 }

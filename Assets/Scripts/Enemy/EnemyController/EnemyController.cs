@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
        if (_isMovementEnabled && _currentState != null) // If movement is enabled, update the current state logic
-        {
+       {
            _currentState.UpdateState();
        }
     }

@@ -9,7 +9,6 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
     [SerializeField] private float _flashInterval = 0.1f;
 
     private EnemyController _enemyController;
-    private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
     private NavMeshAgent _agent;
     private EnemyMeleeAttack _enemyAttack;
@@ -17,7 +16,7 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
     private void Awake()
     {
         _enemyController = GetComponent<EnemyController>();
-        _rb = GetComponent<Rigidbody2D>();
+       
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _agent = GetComponent<NavMeshAgent>();
         _enemyAttack = GetComponent<EnemyMeleeAttack>();
@@ -35,9 +34,6 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
         while (elapsed < _invulnerabilityDuration)
         {
             if (this == null) yield break;
-
-            if (_rb != null)
-                _rb.velocity = Vector2.zero;
 
             if (_spriteRenderer != null)
                 _spriteRenderer.enabled = !_spriteRenderer.enabled;
