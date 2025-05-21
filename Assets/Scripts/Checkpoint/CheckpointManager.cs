@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public static CheckpointManager Instance { get; private set; }
+    public static CheckpointManager Instance { get; private set; } // Singleton pattern.
 
     public Transform currentCheckpoint;
 
@@ -16,13 +16,13 @@ public class CheckpointManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SetCheckpoint(Transform newCheckpoint)
+    public void SetCheckpoint(Transform newCheckpoint)  // Sets the current checkpoint to a new checkpoint.
     {
         currentCheckpoint = newCheckpoint;
     }
 
-    public Vector3 GetCheckpointPosition()
+    public Vector3 GetCheckpointPosition()  // Returns the position of the current checkpoint or Vector3.zero if no checkpoint has been set.
     {
-        return currentCheckpoint != null ? currentCheckpoint.position : Vector3.zero;
+        return currentCheckpoint != null ? currentCheckpoint.position : Vector3.zero; 
     }
 }

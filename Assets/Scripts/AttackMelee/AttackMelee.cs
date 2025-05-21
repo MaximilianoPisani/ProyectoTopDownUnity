@@ -5,79 +5,81 @@ using UnityEngine;
 
 public class AttackMelee : MonoBehaviour
 {
-    [SerializeField] protected AttackData _attackData;
+    [SerializeField] protected AttackData attackData;
     [SerializeField] protected Transform attackPoint;
-    [SerializeField] private LayerMask targetLayer;
-    protected AnimationControllerHandler _animHandler;
+    [SerializeField] protected LayerMask targetLayer; 
+    protected AnimationControllerHandler animHandler;
+    protected Vector2 lastLookDirection;
     private float _lastAttackTime;
     private bool _isAlive = true;
-
     public bool canAttack = true;
-    private Vector2 _lastLookDirection;
-
+    [SerializeField] private float _attackOffsetMultiplier = 0.5f;
     private void Awake()
     {
-        _animHandler = GetComponent<AnimationControllerHandler>();
-    }
-
-    public void SetAliveState(bool state)
-    {
-        _isAlive = state;
-    }
-
-    public void TryAttack()
-    {
-        if (!canAttack || !_isAlive) return;
-        if (Time.time < _lastAttackTime + _attackData.Cooldown) return;
-
-        _lastAttackTime = Time.time;
-        _animHandler.SetBool("isAttacking", true);
-        StartCoroutine(PerformAttackAfterDelay(0.1f));
-    }
-
-    private IEnumerator PerformAttackAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        UpdateAttackPointPosition();
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, _attackData.AttackRange, targetLayer);
-        foreach (Collider2D hit in hits)
-        {
-            Vector2 directionToTarget = hit.transform.position - transform.position;
-            float angle = Vector2.Angle(_lastLookDirection.normalized, directionToTarget.normalized);
-            if (angle > 60f) continue;
-
-            if (directionToTarget.magnitude <= _attackData.AttackRange)
-            {
-                HealthSystem health = hit.GetComponent<HealthSystem>();
-                if (health != null)
-                    health.TakeDamage(Mathf.RoundToInt(_attackData.Damage));
-            }
-        }
-
-        _animHandler.SetBool("isAttacking", false);
+        animHandler = GetComponent<AnimationControllerHandler>();
     }
 
     private void Update()
     {
-        float lx = _animHandler.Animator.GetFloat("LastX");
-        float ly = _animHandler.Animator.GetFloat("LastY");
-        _lastLookDirection = new Vector2(lx, ly).normalized;
+        float lx = animHandler.Animator.GetFloat("LastX");
+        float ly = animHandler.Animator.GetFloat("LastY");
+        lastLookDirection = new Vector2(lx, ly).normalized;
+        UpdateAttackPointPosition();
     }
 
-    private void UpdateAttackPointPosition()
+    public void SetAliveState(bool state) // Set alive or dead state to enable/disable attack capability
+    {
+        _isAlive = state;
+    }
+
+    public void TryAttack() // Attempt to initiate an attack if possible 
+    {
+        if (!canAttack || !_isAlive) return;
+        if (Time.time < _lastAttackTime + attackData.Cooldown) return;
+
+        _lastAttackTime = Time.time;
+        animHandler.SetBool("isAttacking", true);
+    }
+
+    public void EndAttack() // Called to reset attack state after animation ends
+    {
+        animHandler.SetBool("isAttacking", false);
+    }
+
+    protected void UpdateAttackPointPosition() // Repositions the attack point based on the last look direction and offset multiplier
     {
         if (attackPoint == null) return;
-        float offset = _attackData.AttackRange * 0.1f;
-        attackPoint.localPosition = _lastLookDirection * offset;
+        float offset = attackData.AttackRange * _attackOffsetMultiplier;
+        attackPoint.localPosition = lastLookDirection * offset;
     }
 
-    private void OnDrawGizmosSelected()
+
+    public virtual void ApplyDamage() // Applies damage to all valid targets within attack range and angle.
+    {
+        UpdateAttackPointPosition();
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackData.AttackRange, targetLayer);
+        foreach (Collider2D hit in hits)
+        {
+            Vector2 directionToTarget = hit.transform.position - transform.position;
+            float angle = Vector2.Angle(lastLookDirection.normalized, directionToTarget.normalized);
+
+            if (angle > 60f) continue;  
+
+            HealthSystem health = hit.GetComponent<HealthSystem>();
+            if (health != null)
+            {
+                health.TakeDamage(Mathf.RoundToInt(attackData.Damage));
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected() // Draws a gizmo in the editor to visualize the attack range
     {
         if (attackPoint != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, _attackData.AttackRange);
+            Gizmos.DrawWireSphere(attackPoint.position, attackData.AttackRange);
         }
     }
 }

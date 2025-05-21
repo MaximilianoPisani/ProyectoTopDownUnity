@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject CurrentWeapon;
+    public GameObject currentWeapon;
     private AnimationControllerHandler _animator;
 
     private void Start()
@@ -12,17 +12,17 @@ public class WeaponManager : MonoBehaviour
         _animator = GetComponent<AnimationControllerHandler>();
     }
 
-    public void EquipWeapon(GameObject newWeapon)
+    public void EquipWeapon(GameObject newWeapon) // Equip a new weapon.
     {
-        if (CurrentWeapon != null)
+        if (currentWeapon != null)
         {
             DropWeapon();
         }
 
-        CurrentWeapon = newWeapon;
-        var weaponScript = CurrentWeapon.GetComponent<Weapon>();
-        weaponScript.IsEquipped = true;
-        CurrentWeapon.SetActive(true);
+        currentWeapon = newWeapon;
+        var weaponScript = currentWeapon.GetComponent<Weapon>();
+        weaponScript.isEquipped = true;
+        currentWeapon.SetActive(true);
 
         _animator.SetBool("HasGun", true);
 
@@ -33,13 +33,13 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void DropWeapon()
+    public void DropWeapon() // Drop the currently equipped weapon.
     {
-        if (CurrentWeapon != null)
+        if (currentWeapon != null)
         {
-            var weaponScript = CurrentWeapon.GetComponent<Weapon>();
-            weaponScript.IsEquipped = false;
-            CurrentWeapon.SetActive(false);
+            var weaponScript = currentWeapon.GetComponent<Weapon>();
+            weaponScript.isEquipped = false;
+            currentWeapon.SetActive(false);
 
             _animator.SetBool("HasGun", false);
 
@@ -49,8 +49,8 @@ public class WeaponManager : MonoBehaviour
                 attackMelee.canAttack = false;
             }
 
-            PoolManager.Instance.ReturnToPool(CurrentWeapon);
-            CurrentWeapon = null;
+            PoolManager.Instance.ReturnToPool(currentWeapon);
+            currentWeapon = null;
         }
     }
 }

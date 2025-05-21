@@ -6,25 +6,38 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     private Slider _slider;
+    private HealthSystem _healthSystem;
 
     void Awake()
     {
         _slider = GetComponent<Slider>();
     }
 
-    public void ChangeMaxHealth(float maxHealth)
+    public void SetHealthSystem(HealthSystem healthSystem) // Assigns a HealthSystem instance and sets up event subscriptions
     {
-        _slider.maxValue = maxHealth;
+        if (_healthSystem != null)
+        {
+            _healthSystem.UnsubscribeFromHealthChanged(UpdateHealthBar);
+        }
+
+        _healthSystem = healthSystem;
+
+        if (_healthSystem != null)
+        {
+            _healthSystem.SubscribeToHealthChanged(UpdateHealthBar);
+            UpdateHealthBar(_healthSystem.CurrentHealth, _healthSystem.MaxHealth);
+        }
     }
 
-    public void ChangeCurrentHealth(float currentHealth)
+    private void UpdateHealthBar(int currentHealth, int maxHealth) // Updates the slider UI based on current and max health values
     {
+        _slider.maxValue = maxHealth;
         _slider.value = currentHealth;
     }
 
-    public void InitializeHealthBar(float initialHealth)
+    private void OnDestroy() // Called when the object is being destroyed
     {
-        ChangeMaxHealth(initialHealth);
-        ChangeCurrentHealth(initialHealth);
+        if (_healthSystem != null)
+            _healthSystem.UnsubscribeFromHealthChanged(UpdateHealthBar);
     }
 }
