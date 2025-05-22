@@ -11,6 +11,10 @@ public class HealthBar : MonoBehaviour
     void Awake()
     {
         _slider = GetComponent<Slider>();
+        if (_slider == null)
+        {
+            Debug.LogError("Missing required Slider component ");
+        }
     }
 
     public void SetHealthSystem(HealthSystem healthSystem) // Assigns a HealthSystem instance and sets up event subscriptions

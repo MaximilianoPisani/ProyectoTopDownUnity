@@ -18,6 +18,10 @@ public class Weapon : MonoBehaviour
                 weaponManager.EquipWeapon(gameObject); // If so, equips the weapon to the player.
                 PoolManager.Instance.ReturnToPool(gameObject); // Returns it to the object pool.
             }
+            else
+            {
+                Debug.LogWarning("Player entered trigger but has no WeaponManager ");
+            }
         }
     }
 

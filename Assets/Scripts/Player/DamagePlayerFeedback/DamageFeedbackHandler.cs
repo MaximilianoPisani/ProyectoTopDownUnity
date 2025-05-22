@@ -14,8 +14,16 @@ public class DamageFeedbackHandler : MonoBehaviour
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        if (_playerController == null)
+            Debug.LogWarning("Missing PlayerController ");
+
         _rb = GetComponent<Rigidbody2D>();
+        if (_rb == null) 
+            Debug.LogWarning("Missing Rigidbody2D ");
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (_spriteRenderer == null)
+            Debug.LogWarning("Missing SpriteRenderer ");
     }
 
     public IEnumerator PlayFeedback() // Coroutine to play damage feedback for the player (invulnerability + flashing)

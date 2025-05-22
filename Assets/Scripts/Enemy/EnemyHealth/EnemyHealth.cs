@@ -18,11 +18,26 @@ public class EnemyHealth : HealthSystem
     {
         base.Start();
         _enemyController = GetComponent<EnemyController>();
+        if (_enemyController == null)
+            Debug.LogWarning(" Missing EnemyController ");
+
         _animHandler = GetComponent<AnimationControllerHandler>();
+        if (_animHandler == null)
+            Debug.LogWarning(" Missing AnimationControllerHandler ");
+
         _feedbackHandler = GetComponent<EnemyDamageFeedbackHandler>();
+        if (_feedbackHandler == null)
+            Debug.LogWarning(" Missing EnemyDamageFeedbackHandler ");
+
         _meleeAttack = GetComponent<EnemyMeleeAttack>();
+        if (_meleeAttack == null)
+            Debug.LogWarning(" Missing EnemyMeleeAttack ");
+
         _agent = GetComponent<NavMeshAgent>();
+        if (_agent == null)
+            Debug.LogWarning("Missing NavMeshAgent ");
     }
+
 
     public override void TakeDamage(int amount) // Called when the enemy takes damage
     {

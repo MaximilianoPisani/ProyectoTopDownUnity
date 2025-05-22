@@ -10,7 +10,11 @@ public class PlayerController : BaseCharacterController
     void Start()
     {
         _animatorHandler = GetComponent<AnimationControllerHandler>();
-         rb = GetComponent<Rigidbody2D>(); 
+         if (_animatorHandler == null)
+            Debug.LogError("Missing AnimationControllerHandler component on GameObject ");
+         rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+            Debug.LogError("Missing Rigidbody2D component on GameObject ");
     }
 
     protected override void HandleMovement() // Implements abstract method from BaseCharacterController to handle player movement.
@@ -38,7 +42,8 @@ public class PlayerController : BaseCharacterController
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            rb.velocity = Vector2.zero; 
+            if (rb != null)
+                rb.velocity = Vector2.zero; 
         }
     }
 }

@@ -99,7 +99,12 @@ public class PlayerHealth : HealthSystem
 
     private void Respawn() // Resets the player's position and health
     {
-        transform.position = CheckpointManager.Instance.GetCheckpointPosition();
+        if (CheckpointManager.Instance != null)
+            transform.position = CheckpointManager.Instance.GetCheckpointPosition();
+
+        else
+            Debug.LogWarning("CheckpointManager instance is null. Player respawn position not set.");
+
         health = maxHealth;
 
         if (_attackMelee != null)

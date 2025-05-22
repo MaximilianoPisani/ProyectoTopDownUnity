@@ -16,6 +16,11 @@ public class EnemyPatrolState : IEnemyState
     {
 
         _enemy = enemy;
+        if (_enemy == null)
+        {
+            Debug.LogError("EnemyController is null in EnemyPatrolState");
+            return;
+        }
         _agent = _enemy.agent;
         _patrolPoints = _enemy.GetPatrolPoints();
         _waitDuration = _enemy.GetPatrolWaitDuration();

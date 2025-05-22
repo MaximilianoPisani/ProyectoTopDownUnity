@@ -39,7 +39,7 @@ public class HealthSystem : MonoBehaviour
         OnHealthChanged?.Invoke(health, maxHealth);
     }
 
-    protected virtual void Die()  // Method that handles what happens when the entity dies (after which it is overridden in other scripts).
+    protected virtual void Die()  // Method that handles what happens when the entity dies 
     {
         Destroy(gameObject);
     }

@@ -10,16 +10,22 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
 
     private EnemyController _enemyController;
     private SpriteRenderer _spriteRenderer;
-    private NavMeshAgent _agent;
     private EnemyMeleeAttack _enemyAttack;
 
     private void Awake()
     {
         _enemyController = GetComponent<EnemyController>();
-       
+        if (_enemyController == null)
+
+            Debug.LogWarning("Missing EnemyController ");
+        
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _agent = GetComponent<NavMeshAgent>();
+        if (_spriteRenderer == null)
+            Debug.LogWarning("Missing SpriteRenderer ");
+
         _enemyAttack = GetComponent<EnemyMeleeAttack>();
+        if (_enemyAttack == null)
+            Debug.LogWarning("Missing EnemyMeleeAttack ");
     }
 
     public IEnumerator PlayFeedback() // Coroutine to play feedback when enemy takes damage
@@ -33,7 +39,6 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < _invulnerabilityDuration)
         {
-            if (this == null) yield break;
 
             if (_spriteRenderer != null)
                 _spriteRenderer.enabled = !_spriteRenderer.enabled;

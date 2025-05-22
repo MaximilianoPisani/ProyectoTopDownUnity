@@ -11,6 +11,8 @@ public abstract class BaseCharacterController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+            Debug.LogError("Missing Rigidbody2D component on GameObject ");
     }
 
     void Update() // Handles input and movement direction called per frame.

@@ -10,6 +10,11 @@ public class EnemyAttackState : IEnemyState
     public void EnterState(EnemyController enemy) // Called when the enemy enters the attack state
     {
         _enemy = enemy;
+        if (_enemy == null)
+        {
+            Debug.LogError("EnemyController is null in EnemyAttackState");
+            return;
+        }
         _meleeAttack = _enemy.GetComponent<EnemyMeleeAttack>();
 
         _enemy.agent.isStopped = true;

@@ -10,6 +10,10 @@ public class WeaponManager : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<AnimationControllerHandler>();
+        if (_animator == null)
+        {
+            Debug.LogError("Missing AnimationControllerHandler ");
+        }
     }
 
     public void EquipWeapon(GameObject newWeapon) // Equip a new weapon.
@@ -21,7 +25,15 @@ public class WeaponManager : MonoBehaviour
 
         currentWeapon = newWeapon;
         var weaponScript = currentWeapon.GetComponent<Weapon>();
-        weaponScript.isEquipped = true;
+        if (weaponScript == null)
+        {
+            Debug.LogError(" has no Weapon script ");
+        }
+        else
+        {
+            weaponScript.isEquipped = true;
+        }
+
         currentWeapon.SetActive(true);
 
         _animator.SetBool("HasGun", true);

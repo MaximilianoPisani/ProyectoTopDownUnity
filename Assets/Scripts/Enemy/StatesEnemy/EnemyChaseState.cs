@@ -10,6 +10,11 @@ public class EnemyChaseState : IEnemyState
     public void EnterState(EnemyController enemy) // Called when the enemy enters the chase state
     {
         _enemy = enemy;
+        if (_enemy == null)
+        {
+            Debug.LogError("EnemyController is null in EnemyChaseState");
+            return;
+        }
         _enemy.SetMoving(true);
         _enemy.animHandler.SetBool("Moving", true);
         _enemy.animHandler.SetBool("isAttacking", false);

@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public static CheckpointManager Instance { get; private set; } // Singleton pattern.
+    public static CheckpointManager Instance { get; private set; } 
 
     public Transform currentCheckpoint;
 
     private void Awake()
     {
-        if (Instance == null)
+         if (Instance == null)
+         {   
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+         }
         else
+        {
             Destroy(gameObject);
+        }
+           
     }
 
     public void SetCheckpoint(Transform newCheckpoint)  // Sets the current checkpoint to a new checkpoint.

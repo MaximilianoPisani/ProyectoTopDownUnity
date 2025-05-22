@@ -9,6 +9,10 @@ public class AnimationControllerHandler : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        if (_animator == null)
+        {
+            Debug.LogError("Animator is not here ");
+        }
     }
 
     public void TriggerAnimation(string state) // This activates a transition based on the given trigger name.

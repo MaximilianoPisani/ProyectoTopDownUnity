@@ -17,7 +17,11 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (agent == null)
+            Debug.LogError("Is missing a NavMeshAgent component ");
         animHandler = GetComponent<AnimationControllerHandler>();
+        if (animHandler == null)
+            Debug.LogError("Is missing an AnimationControllerHandler component ");
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }

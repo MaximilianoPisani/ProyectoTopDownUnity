@@ -9,6 +9,11 @@ public class EnemyIdleState : IEnemyState
     public void EnterState(EnemyController enemy) // Called when entering the idle state
     {
         _enemy = enemy;
+        if (_enemy == null)
+        {
+            Debug.LogError("EnemyController is null in EnemyIdleState");
+            return;
+        }
         _enemy.SetMoving(false);
 
         _enemy.animHandler.SetBool("Moving", false);
