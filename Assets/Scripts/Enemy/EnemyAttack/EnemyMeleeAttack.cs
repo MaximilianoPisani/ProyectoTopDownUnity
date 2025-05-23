@@ -50,7 +50,7 @@ public class EnemyMeleeAttack : AttackMelee
         {
             SetTarget(other.transform);
             GetComponent<EnemyController>().SetTarget(other.transform);
-            GetComponent<EnemyController>().ChangeState(new EnemyAttackState());
+            GetComponent<EnemyController>().ChangeState(new EnemyAttackMeleeState());
         }
     }
 

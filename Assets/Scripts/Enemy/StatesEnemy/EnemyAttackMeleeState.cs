@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class EnemyAttackState : IEnemyState
+public class EnemyAttackMeleeState : IEnemyState
 {
     private EnemyController _enemy;
     private EnemyMeleeAttack _meleeAttack;

@@ -30,7 +30,7 @@ public class EnemyChaseState : IEnemyState
             {
                 _enemy.agent.isStopped = true;
                 _enemy.agent.velocity = Vector3.zero;
-                _enemy.ChangeState(new EnemyAttackState());
+                _enemy.ChangeState(new EnemyAttackMeleeState());
                 return;
             }
 
