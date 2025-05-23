@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PlayerController : BaseCharacterController
 {
-    private AnimationControllerHandler _animatorHandler;
     private Vector2 _lastDirection = Vector2.down;
+    private AnimationControllerHandler _animatorHandler;
   
     void Start()
     {
         _animatorHandler = GetComponent<AnimationControllerHandler>();
          if (_animatorHandler == null)
             Debug.LogError("Missing AnimationControllerHandler component on GameObject ");
+
          rb = GetComponent<Rigidbody2D>();
         if (rb == null)
             Debug.LogError("Missing Rigidbody2D component on GameObject ");
+
     }
 
     protected override void HandleMovement() // Implements abstract method from BaseCharacterController to handle player movement.

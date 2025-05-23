@@ -17,8 +17,9 @@ public class AttackMelee : MonoBehaviour
     private void Awake()
     {
         animHandler = GetComponent<AnimationControllerHandler>();
+        if (animHandler == null)
+            Debug.LogWarning("AnimationControllerHandler not found ");
     }
-
     private void Update()
     {
         float lx = animHandler.Animator.GetFloat("LastX");

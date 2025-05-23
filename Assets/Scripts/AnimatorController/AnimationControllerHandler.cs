@@ -12,6 +12,7 @@ public class AnimationControllerHandler : MonoBehaviour
         if (_animator == null)
         {
             Debug.LogError("Animator is not here ");
+
         }
     }
 

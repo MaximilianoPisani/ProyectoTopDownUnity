@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.AI; 
 public class EnemyController : MonoBehaviour
 {
+
     public NavMeshAgent agent { get; private set; }
     public Transform currentTarget { get; private set; }
     public AnimationControllerHandler animHandler;
     private IEnemyState _currentState;
     private bool _isMovementEnabled = true;
     private bool _isMoving;
-    [SerializeField] private Transform[] _patrolPoints;
     private bool _hasSeenPlayer = false;
+    [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private float _patrolWaitDuration = 1.5f;
 
     private void Awake()
@@ -19,9 +20,11 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         if (agent == null)
             Debug.LogError("Is missing a NavMeshAgent component ");
+
         animHandler = GetComponent<AnimationControllerHandler>();
         if (animHandler == null)
             Debug.LogError("Is missing an AnimationControllerHandler component ");
+
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }

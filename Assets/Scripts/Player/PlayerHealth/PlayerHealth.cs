@@ -8,20 +8,33 @@ public class PlayerHealth : HealthSystem
     [SerializeField] private HealthBar _healthBar;
 
     private PlayerController _playerController;
+    private DamageFeedbackHandler _damageFeedbackHandler;
+    private AttackMelee _attackMelee;
     private AnimationControllerHandler _animatorHandler;
     private Rigidbody2D _rb;
-    private DamageFeedbackHandler _feedbackHandler;
-    private AttackMelee _attackMelee;
-
     private bool _isInvulnerable = false;
-
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        if (_playerController == null)
+            Debug.LogWarning("Missing PlayerController ");
+
         _animatorHandler = GetComponent<AnimationControllerHandler>();
+        if (_animatorHandler == null)
+            Debug.LogWarning("Missing AnimatorControllerHandler ");
+
         _rb = GetComponent<Rigidbody2D>();
-        _feedbackHandler = GetComponent<DamageFeedbackHandler>();
+        if (_rb == null)
+            Debug.LogWarning("Missing Rigidbody2D ");
+
+        _damageFeedbackHandler = GetComponent<DamageFeedbackHandler>();
+        if (_damageFeedbackHandler == null)
+            Debug.LogWarning("Missing DamageFeedbackHandler ");
+
         _attackMelee = GetComponent<AttackMelee>();
+        if (_attackMelee == null)
+            Debug.LogWarning("Missing AttackMelee ");
+
     }
 
     protected override void Start()
@@ -52,9 +65,9 @@ public class PlayerHealth : HealthSystem
     {
         _isInvulnerable = true;
 
-        if (_feedbackHandler != null)
+        if (_damageFeedbackHandler != null)
         {
-            yield return StartCoroutine(_feedbackHandler.PlayFeedback());
+            yield return StartCoroutine(_damageFeedbackHandler.PlayFeedback());
         }
 
         _isInvulnerable = false;
