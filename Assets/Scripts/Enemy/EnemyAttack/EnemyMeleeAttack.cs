@@ -49,8 +49,7 @@ public class EnemyMeleeAttack : AttackMelee
         if (other.CompareTag("Player"))
         {
             SetTarget(other.transform);
-            GetComponent<EnemyController>().SetTarget(other.transform);
-            GetComponent<EnemyController>().ChangeState(new EnemyAttackMeleeState());
+           GetComponent<EnemyStateMachine>().ChangeState(new EnemyAttackMeleeState());
         }
     }
 

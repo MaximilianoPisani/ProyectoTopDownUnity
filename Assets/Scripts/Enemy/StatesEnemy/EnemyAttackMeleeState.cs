@@ -26,7 +26,7 @@ public class EnemyAttackMeleeState : IEnemyState
     {
         if (_enemy.currentTarget == null)
         {
-            _enemy.ChangeState(new EnemyPatrolState());
+            _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyPatrolState());
             return;
         }
 
@@ -34,7 +34,7 @@ public class EnemyAttackMeleeState : IEnemyState
 
         if (distance > _meleeAttack.AttackRange)
         {
-            _enemy.ChangeState(new EnemyChaseState());
+            _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyChaseState());
             return;
         }
 

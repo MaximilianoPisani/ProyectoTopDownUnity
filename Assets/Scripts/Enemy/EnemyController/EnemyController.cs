@@ -8,10 +8,13 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent { get; private set; }
     public Transform currentTarget { get; private set; }
     public AnimationControllerHandler animHandler;
-    private IEnemyState _currentState;
+
+    private EnemyStateMachine _stateMachine;
+
     private bool _isMovementEnabled = true;
     private bool _isMoving;
     private bool _hasSeenPlayer = false;
+
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private float _patrolWaitDuration = 1.5f;
 
@@ -25,20 +28,25 @@ public class EnemyController : MonoBehaviour
         if (animHandler == null)
             Debug.LogError("Is missing an AnimationControllerHandler component ");
 
+        _stateMachine = GetComponent<EnemyStateMachine>();
+        if (_stateMachine == null) 
+            Debug.LogError("Missing EnemyStateMachine");
+
         agent.updateRotation = false;
         agent.updateUpAxis = false;
     }
 
     private void Start()
     {
-        ChangeState(new EnemyPatrolState()); // Start in Patrol state
+        _stateMachine.ChangeState(new EnemyPatrolState()); // Start in Patrol state
     }
+
     private void Update()
     {
-       if (_isMovementEnabled && _currentState != null) // If movement is enabled, update the current state logic
-       {
-           _currentState.UpdateState();
-       }
+        if (_isMovementEnabled)
+        {
+            _stateMachine.UpdateState();
+        }
     }
     public float GetPatrolWaitDuration() // Returns how long the enemy waits at patrol points
     {
@@ -47,31 +55,20 @@ public class EnemyController : MonoBehaviour
     public void OnTargetEnterVision(Transform target) // Called when a target (the player) enters the enemy’s vision
     {
         currentTarget = target;
-        _hasSeenPlayer = true; 
-        ChangeState(new EnemyChaseState());
+        _hasSeenPlayer = true;
+        _stateMachine.ChangeState(new EnemyChaseState());
     }
     public void OnTargetExitVision() // Called when the target exits vision
     {
         currentTarget = null;
 
         agent.ResetPath(); 
-        agent.velocity = Vector3.zero; 
+        agent.velocity = Vector3.zero;
 
         if (_hasSeenPlayer)
-        {
-            ChangeState(new EnemyIdleState());
-        }
+            _stateMachine.ChangeState(new EnemyIdleState());
         else
-        {
-            ChangeState(new EnemyPatrolState());
-        }
-    }
-
-    public void ChangeState(IEnemyState newState) // Changes the enemy’s current state using the state pattern
-    {
-        _currentState?.ExitState();
-        _currentState = newState;
-        _currentState.EnterState(this);
+            _stateMachine.ChangeState(new EnemyPatrolState());
     }
 
     public void SetTarget(Transform target) // Set the current target manually
