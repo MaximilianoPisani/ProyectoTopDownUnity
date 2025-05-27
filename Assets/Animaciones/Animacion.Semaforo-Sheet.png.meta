@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55bf6bc611dd0a54b99d5a628670ec14
+guid: aff0a65913cf00546a1b4421ab22a767
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,7 +124,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,358 +136,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile-ParedPiso-32_0
+      name: Animacion.Semaforo-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 198
-        width: 32
-        height: 32
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccb96ce8e18a38d46bd87ecae401ee6f
-      internalID: 1865387442
+      spriteID: f5d586090e2c5ff408799d604d9f7c90
+      internalID: -1692715393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_1
+      name: Animacion.Semaforo-Sheet_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 198
-        width: 32
-        height: 32
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 758f7d7d01e9fe94ca4105632a2ca866
-      internalID: 1849983573
+      spriteID: 25eb3241b961baf48a16ab3a72f1bce7
+      internalID: -1701515914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_2
+      name: Animacion.Semaforo-Sheet_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 198
-        width: 32
-        height: 32
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7e72003e46eb54479bb74d33b25aba6
-      internalID: -700027585
+      spriteID: 9ed13d921b5a3514e9ac9ed589db367e
+      internalID: -1614385126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_3
+      name: Animacion.Semaforo-Sheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 165
-        width: 32
-        height: 32
+        x: 144
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24b8eaec58a744b43b412a1002d5c54d
-      internalID: -1326014016
+      spriteID: 24229580c965d0949a6773bfecb8dd1d
+      internalID: -154233291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_4
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 165
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f335a5462d4a5e4bb2c97779da728bd
-      internalID: 1227180990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_5
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 165
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: beec73df67c85094eb56194c9fc55baf
-      internalID: 1547378502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_6
+      name: Animacion.Semaforo-Sheet_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 132
-        width: 32
-        height: 32
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 081416eeecefe744686247738d5c02c4
-      internalID: -482316952
+      spriteID: cb44461fe224abb4796bcab040a4ad8b
+      internalID: 346158157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_7
+      name: Animacion.Semaforo-Sheet_5
       rect:
         serializedVersion: 2
-        x: 33
-        y: 132
-        width: 32
-        height: 32
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40f0172ef76b48248b01b3cb1b1ed2d9
-      internalID: 1796041658
+      spriteID: 68378dd35665b6f40a3c0f43f45612e0
+      internalID: 1558538892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_8
+      name: Animacion.Semaforo-Sheet_6
       rect:
         serializedVersion: 2
-        x: 66
-        y: 132
-        width: 32
-        height: 32
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdd72bfe9f4b3f344b05d3eb78968d2f
-      internalID: -181054123
+      spriteID: 10f9ac67b7e7fa048a9918e8de2cd758
+      internalID: 1227856691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_9
+      name: Animacion.Semaforo-Sheet_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 99
-        width: 32
-        height: 32
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f81d1bccbadab49a257cdcdf219b8a
-      internalID: 1771621207
+      spriteID: 0fa321f391d729e4fa9bb41a5c57f9dc
+      internalID: 1440096567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile-ParedPiso-32_10
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 99
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5568f200c5a0ec419684172fd502c36
-      internalID: 1161455116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_11
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 99
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 363508d0f2cc5374eae9b466b1a33480
-      internalID: -2128549131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_12
+      name: Animacion.Semaforo-Sheet_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f78bc04c97063aa479b8c66511305529
-      internalID: -339869952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_13
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 66
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1608cc292a8541540b91e2c5771b203a
-      internalID: -1061823776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_14
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 66
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ad6e9d7606cc8547a8baccda16401f7
-      internalID: -1206504007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_15
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 33
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c6424a3eb288824c82509c07d2b61df
-      internalID: -1476305603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile-ParedPiso-32_16
-      rect:
-        serializedVersion: 2
-        x: 33
         y: 0
-        width: 32
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fed98fccc44e19b42a7c602d822407df
-      internalID: 338397605
+      spriteID: e51b7712347a63142baf9f8c76764536
+      internalID: -2081989968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion.Semaforo-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f482d4ccd0f604cbe2f98563bb8846
+      internalID: -1139376963
       vertices: []
       indices: 
       edges: []
@@ -503,23 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tile-ParedPiso-32_0: 1865387442
-      tile-ParedPiso-32_1: 1849983573
-      tile-ParedPiso-32_10: 1161455116
-      tile-ParedPiso-32_11: -2128549131
-      tile-ParedPiso-32_12: -339869952
-      tile-ParedPiso-32_13: -1061823776
-      tile-ParedPiso-32_14: -1206504007
-      tile-ParedPiso-32_15: -1476305603
-      tile-ParedPiso-32_16: 338397605
-      tile-ParedPiso-32_2: -700027585
-      tile-ParedPiso-32_3: -1326014016
-      tile-ParedPiso-32_4: 1227180990
-      tile-ParedPiso-32_5: 1547378502
-      tile-ParedPiso-32_6: -482316952
-      tile-ParedPiso-32_7: 1796041658
-      tile-ParedPiso-32_8: -181054123
-      tile-ParedPiso-32_9: 1771621207
+      Animacion.Semaforo-Sheet_0: -1692715393
+      Animacion.Semaforo-Sheet_1: -1701515914
+      Animacion.Semaforo-Sheet_2: -1614385126
+      Animacion.Semaforo-Sheet_3: -154233291
+      Animacion.Semaforo-Sheet_4: 346158157
+      Animacion.Semaforo-Sheet_5: 1558538892
+      Animacion.Semaforo-Sheet_6: 1227856691
+      Animacion.Semaforo-Sheet_7: 1440096567
+      Animacion.Semaforo-Sheet_8: -2081989968
+      Animacion.Semaforo-Sheet_9: -1139376963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
