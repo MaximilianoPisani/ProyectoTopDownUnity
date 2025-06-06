@@ -14,12 +14,20 @@ public class EnemyIdleState : IEnemyState
             Debug.LogError("EnemyController is null in EnemyIdleState");
             return;
         }
+
         _enemy.SetMoving(false);
 
-        _enemy.animHandler.SetBool("Moving", false);
-        _enemy.animHandler.SetBool("isAttacking", false);
+        _enemy.agent.isStopped = true;
+        _enemy.agent.velocity = Vector3.zero;
 
-       
+        _enemy.animHandler?.SetBool("Moving", false);
+
+        if (_enemy.animHandler.HasParameter("isAttackingMelee"))
+            _enemy.animHandler.SetBool("isAttackingMelee", false);
+
+        if (_enemy.animHandler.HasParameter("isAttackingRange"))
+            _enemy.animHandler.SetBool("isAttackingRange", false);
+
         Vector2 lastVelocity = _enemy.agent.velocity;
 
         if (lastVelocity.sqrMagnitude > 0.01f)
@@ -29,6 +37,7 @@ public class EnemyIdleState : IEnemyState
             _enemy.animHandler.SetFloat("LastY", lastVelocity.y);
         }
     }
+
 
     public void UpdateState() // Called every frame while in the idle state
     {

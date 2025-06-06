@@ -8,6 +8,8 @@ TagManager:
   - RangedWeapon
   - Enemy
   - Bullet
+  - Weapon
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -10,35 +10,30 @@ public class EnemyStateMachine : MonoBehaviour
     private void Awake()
     {
         _enemy = GetComponent<EnemyController>();
+    }
+
+    public void SetInitialState(IEnemyState state)
+    {
         if (_enemy == null)
-        Debug.LogError("EnemyController reference is missing ");
-        
+            _enemy = GetComponent<EnemyController>();
+
+        _currentState = state;
+        _currentState.EnterState(_enemy);
     }
 
-    public void ChangeState(IEnemyState newState) // Changes the current state to a new one.
+    public void ChangeState(IEnemyState newState)
     {
-        if (_currentState != null)
-        {
-            _currentState.ExitState();
-        }
-
+        _currentState?.ExitState();
         _currentState = newState;
-
-        if (_currentState != null)
-        {
-            _currentState.EnterState(_enemy);
-        }
+        _currentState?.EnterState(_enemy);
     }
 
-    public void UpdateState() // Called every frame to update the logic of the current state.
+    public void UpdateState()
     {
-        if (_currentState != null)
-        {
-            _currentState.UpdateState();
-        }
+        _currentState?.UpdateState();
     }
 
-    public IEnemyState GetCurrentState() // Returns the current active state of the enemy.
+    public IEnemyState GetCurrentState()
     {
         return _currentState;
     }

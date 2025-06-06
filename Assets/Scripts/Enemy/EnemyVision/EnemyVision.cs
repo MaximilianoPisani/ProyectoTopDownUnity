@@ -8,6 +8,8 @@ public class EnemyVision : MonoBehaviour
 {
     public EnemyController enemyController;
     public EnemyMeleeAttack enemyMeleeAttack;
+    public EnemyRangedAttack enemyRangedAttack;
+
 
     private void Start()
     {
@@ -19,14 +21,21 @@ public class EnemyVision : MonoBehaviour
 
         if (enemyMeleeAttack == null)
             enemyMeleeAttack = GetComponentInParent<EnemyMeleeAttack>();
+
+        if (enemyRangedAttack == null)
+            enemyRangedAttack = GetComponentInParent<EnemyRangedAttack>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) // Called when another collider enters the trigger collider attached to this object.
     {
         if (other.CompareTag("Player"))
         {
-            enemyController.OnTargetEnterVision(other.transform);
-            enemyMeleeAttack.SetTarget(other.transform);
+            if (enemyController != null)
+                enemyController.OnTargetEnterVision(other.transform);
+            if (enemyMeleeAttack != null)
+                enemyMeleeAttack.SetTarget(other.transform);
+            if (enemyRangedAttack != null)
+                enemyRangedAttack.SetTarget(other.transform);
         }
     }
 
@@ -34,8 +43,12 @@ public class EnemyVision : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            enemyController.OnTargetExitVision();
-            enemyMeleeAttack.SetTarget(null);
+            if (enemyController != null)
+                enemyController.OnTargetExitVision();
+            if (enemyMeleeAttack != null)
+                enemyMeleeAttack.SetTarget(null);
+            if (enemyRangedAttack != null)
+                enemyRangedAttack.SetTarget(null);
         }
     }
 }

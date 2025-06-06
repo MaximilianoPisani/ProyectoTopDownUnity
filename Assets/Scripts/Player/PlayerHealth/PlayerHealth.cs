@@ -10,6 +10,7 @@ public class PlayerHealth : HealthSystem
     private PlayerController _playerController;
     private DamageFeedbackHandler _damageFeedbackHandler;
     private AttackMelee _attackMelee;
+    private AttackRanged _attackRanged;
     private AnimationControllerHandler _animatorHandler;
     private Rigidbody2D _rb;
     private bool _isInvulnerable = false;
@@ -32,9 +33,12 @@ public class PlayerHealth : HealthSystem
             Debug.LogWarning("Missing DamageFeedbackHandler ");
 
         _attackMelee = GetComponent<AttackMelee>();
-        if (_attackMelee == null)
-            Debug.LogWarning("Missing AttackMelee ");
+        _attackRanged = GetComponent<AttackRanged>();
 
+        if (_attackMelee == null && _attackRanged == null)
+        {
+            Debug.LogWarning("Missing both AttackMelee and AttackRanged components");
+        }
     }
 
     protected override void Start()
@@ -97,6 +101,10 @@ public class PlayerHealth : HealthSystem
 
         _attackMelee?.SetAliveState(false);
 
+        if (_attackRanged != null)
+            _attackRanged.enabled = false;
+       
+
         yield return new WaitForSeconds(1f);
 
 
@@ -122,6 +130,9 @@ public class PlayerHealth : HealthSystem
 
         if (_attackMelee != null)
             _attackMelee.SetAliveState(true);
+
+        if (_attackRanged != null)
+            _attackRanged.enabled = true;
 
         NotifyHealthChanged(); 
     }

@@ -8,25 +8,61 @@ public class Weapon : MonoBehaviour
     public string weaponName;
     public bool isEquipped = false;
 
-    private void OnTriggerEnter2D(Collider2D other) // Called when another Collider2D enters this object's trigger area.
+    [SerializeField] private string _animatorFlag; // "HasSword" o "HasShotgun"
+
+    private bool _isPlayerInRange = false;
+    private GameObject _playerInRange;
+
+    public string AnimatorFlag => _animatorFlag;
+
+    private void Update()
     {
-        if (other.CompareTag("Player") && !isEquipped) // Checks if the player touches the weapon and if the weapon is not already equipped.
+        if (_isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            WeaponManager weaponManager = other.GetComponent<WeaponManager>();
-            if (weaponManager != null)
-            {
-                weaponManager.EquipWeapon(gameObject); // If so, equips the weapon to the player.
-                PoolManager.Instance.ReturnToPool(gameObject); // Returns it to the object pool.
-            }
-            else
-            {
-                Debug.LogWarning("Player entered trigger but has no WeaponManager ");
-            }
+            TryEquipWeapon();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) // Called when another Collider2D exits this object's trigger area.
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) return;
+        if (other.CompareTag("Player"))
+        {
+            _isPlayerInRange = true;
+            _playerInRange = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _isPlayerInRange = false;
+            _playerInRange = null;
+        }
+    }
+
+    private void TryEquipWeapon()
+    {
+        if (isEquipped) return;
+
+        WeaponManager weaponManager = _playerInRange.GetComponent<WeaponManager>();
+        if (weaponManager != null)
+        {
+            if (weaponManager.currentWeapon != null)
+            {
+                Weapon current = weaponManager.currentWeapon.GetComponent<Weapon>();
+                if (current != null && current.weaponName == weaponName)
+                {
+                    Debug.Log("You already have this weapon equipped ");
+                    return;
+                }
+            }
+
+            weaponManager.EquipWeapon(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("Player does not have WeaponManager ");
+        }
     }
 }

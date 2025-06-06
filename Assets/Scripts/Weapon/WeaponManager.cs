@@ -7,6 +7,8 @@ public class WeaponManager : MonoBehaviour
     public GameObject currentWeapon;
     private AnimationControllerHandler _animator;
 
+    [SerializeField] private Transform _weaponDropPoint;
+
     private void Start()
     {
         _animator = GetComponent<AnimationControllerHandler>();
@@ -14,9 +16,14 @@ public class WeaponManager : MonoBehaviour
         {
             Debug.LogError("Missing AnimationControllerHandler ");
         }
+
+        if (_weaponDropPoint == null)
+        {
+            _weaponDropPoint = this.transform;
+        }
     }
 
-    public void EquipWeapon(GameObject newWeapon) // Equip a new weapon.
+    public void EquipWeapon(GameObject newWeapon)
     {
         if (currentWeapon != null)
         {
@@ -24,44 +31,41 @@ public class WeaponManager : MonoBehaviour
         }
 
         currentWeapon = newWeapon;
-        var weaponScript = currentWeapon.GetComponent<Weapon>();
-        if (weaponScript == null)
-        {
-            Debug.LogError(" has no Weapon script ");
-        }
-        else
+        Weapon weaponScript = currentWeapon.GetComponent<Weapon>();
+
+        if (weaponScript != null)
         {
             weaponScript.isEquipped = true;
+            _animator.SetBool(weaponScript.AnimatorFlag, true);
         }
 
-        currentWeapon.SetActive(true);
-
-        _animator.SetBool("HasGun", true);
-
-        var attackMelee = GetComponent<AttackMelee>();
-        if (attackMelee != null)
-        {
-            attackMelee.canAttack = true;
-        }
+        
+        currentWeapon.SetActive(false);
     }
 
-    public void DropWeapon() // Drop the currently equipped weapon.
+    public void DropWeapon()
     {
         if (currentWeapon != null)
         {
-            var weaponScript = currentWeapon.GetComponent<Weapon>();
-            weaponScript.isEquipped = false;
-            currentWeapon.SetActive(false);
-
-            _animator.SetBool("HasGun", false);
-
-            var attackMelee = GetComponent<AttackMelee>();
-            if (attackMelee != null)
+            Weapon weaponScript = currentWeapon.GetComponent<Weapon>();
+            if (weaponScript != null)
             {
-                attackMelee.canAttack = false;
+                weaponScript.isEquipped = false;
+                _animator.SetBool(weaponScript.AnimatorFlag, false);
             }
 
-            PoolManager.Instance.ReturnToPool(currentWeapon);
+       
+            currentWeapon.transform.SetParent(null);
+            currentWeapon.transform.position = _weaponDropPoint.position;
+
+            currentWeapon.SetActive(true); 
+
+            Collider2D collider = currentWeapon.GetComponent<Collider2D>();
+            if (collider != null)
+            {
+                collider.enabled = true;
+            }
+
             currentWeapon = null;
         }
     }

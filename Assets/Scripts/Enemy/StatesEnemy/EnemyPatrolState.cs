@@ -14,18 +14,35 @@ public class EnemyPatrolState : IEnemyState
 
     public void EnterState(EnemyController enemy) // Called when the enemy enters the patrol state
     {
-
         _enemy = enemy;
         if (_enemy == null)
         {
             Debug.LogError("EnemyController is null in EnemyPatrolState");
             return;
         }
+
         _agent = _enemy.agent;
+        if (_agent == null)
+        {
+            Debug.LogError("NavMeshAgent is null in EnemyPatrolState");
+        }
+
         _patrolPoints = _enemy.GetPatrolPoints();
+        if (_patrolPoints == null)
+        {
+            Debug.LogWarning("Patrol points array is null, setting empty array.");
+            _patrolPoints = new Transform[0];
+        }
+
         _waitDuration = _enemy.GetPatrolWaitDuration();
-        _enemy.animHandler.SetBool("Moving", true);
-        _enemy.animHandler.SetBool("isAttacking", false);
+
+        if (_enemy.animHandler == null)
+        {
+            Debug.LogError("AnimationControllerHandler is null in EnemyPatrolState");
+        }
+
+        _enemy.animHandler.SafeSetBool("Moving", true);
+        _enemy.animHandler.SafeSetBool("isAttackingMelee", false);
 
         if (_patrolPoints.Length == 0) return;
 
@@ -35,7 +52,10 @@ public class EnemyPatrolState : IEnemyState
 
     public void UpdateState() // Called every frame while the enemy is in the patrol state
     {
-        if (_patrolPoints.Length == 0) return;
+ 
+        if (_patrolPoints == null || _patrolPoints.Length == 0) return;
+        if (_agent == null) return;
+        if (_enemy == null || _enemy.animHandler == null) return;
 
         if (!_agent.pathPending && _agent.remainingDistance <= _agent.stoppingDistance)
         {
@@ -53,9 +73,14 @@ public class EnemyPatrolState : IEnemyState
 
         UpdateDirectionAnimation();
     }
-
     public void ExitState() // Called when exiting the patrol state
     {
+        if (_enemy == null || _enemy.animHandler == null)
+        {
+            // Evita NullReferenceException si no están inicializados
+            return;
+        }
+
         _enemy.animHandler.SetBool("Moving", false);
     }
 

@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyDamageFeedbackHandler : MonoBehaviour 
+public class EnemyDamageFeedbackHandler : MonoBehaviour
 {
     [SerializeField] private float _invulnerabilityDuration = 1f;
     [SerializeField] private float _flashInterval = 0.1f;
 
     private EnemyController _enemyController;
     private SpriteRenderer _spriteRenderer;
-    private EnemyMeleeAttack _enemyAttack;
+    private MonoBehaviour _enemyAttack; // Puede ser melee o ranged
 
     private void Awake()
     {
         _enemyController = GetComponent<EnemyController>();
         if (_enemyController == null)
-
             Debug.LogWarning("Missing EnemyController ");
-        
+
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (_spriteRenderer == null)
             Debug.LogWarning("Missing SpriteRenderer ");
 
-        _enemyAttack = GetComponent<EnemyMeleeAttack>();
+        _enemyAttack = GetComponent<EnemyMeleeAttack>() as MonoBehaviour;
         if (_enemyAttack == null)
-            Debug.LogWarning("Missing EnemyMeleeAttack ");
+            _enemyAttack = GetComponent<EnemyRangedAttack>();
 
+        // No warning si no tiene ataque, puede ser normal
     }
 
     public IEnumerator PlayFeedback() // Coroutine to play feedback when enemy takes damage
@@ -40,7 +40,6 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
         float elapsed = 0f;
         while (elapsed < _invulnerabilityDuration)
         {
-
             if (_spriteRenderer != null)
                 _spriteRenderer.enabled = !_spriteRenderer.enabled;
 

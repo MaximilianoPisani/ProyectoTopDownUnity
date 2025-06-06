@@ -21,19 +21,19 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 9fab7051836f90d4198e67e7f0ab44f5, type: 3}
-    - time: 0.11666667
-      value: {fileID: 21300000, guid: 583beff85c86c5f40831818e91d8ce18, type: 3}
-    - time: 0.23333333
-      value: {fileID: 21300000, guid: d28dad0bf3afc2444b24322f4a234e7e, type: 3}
-    - time: 0.35
-      value: {fileID: 21300000, guid: 432b1a430ea212b459b6064f66860a3a, type: 3}
+      value: {fileID: 976636818, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
+    - time: 0.075
+      value: {fileID: -570790055, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
+    - time: 0.15
+      value: {fileID: -681342715, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
+    - time: 0.225
+      value: {fileID: 409446833, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 60
+  m_SampleRate: 40
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -50,16 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 9fab7051836f90d4198e67e7f0ab44f5, type: 3}
-    - {fileID: 21300000, guid: 583beff85c86c5f40831818e91d8ce18, type: 3}
-    - {fileID: 21300000, guid: d28dad0bf3afc2444b24322f4a234e7e, type: 3}
-    - {fileID: 21300000, guid: 432b1a430ea212b459b6064f66860a3a, type: 3}
+    - {fileID: 976636818, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
+    - {fileID: -570790055, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
+    - {fileID: -681342715, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
+    - {fileID: 409446833, guid: 2a95f8ce226c5b940884641e178d9fa0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.36666667
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

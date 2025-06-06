@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyMeleeAttack : AttackMelee
 {
     private Transform _target;
-    public float AttackRange => attackData.AttackRange;
-
+    public float AttackRange => meleeAttackData.AttackRange;
+    private MeleeAttackData _meleeattackData;
     public void SetTarget(Transform target)
     {
         _target = target;
@@ -22,8 +22,11 @@ public class EnemyMeleeAttack : AttackMelee
             TryAttack();
         }
     }
+    public void SetAttackData(MeleeAttackData data)
+    {
+        _meleeattackData = data;
+    }
 
-   
     public override void ApplyDamage() // Called by an animation event at specific frames where the attack should apply damage.
     {
         if (_target == null) return;
@@ -34,7 +37,7 @@ public class EnemyMeleeAttack : AttackMelee
             PlayerHealth playerHealth = _target.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage((int)attackData.Damage);
+                playerHealth.TakeDamage((int)meleeAttackData.Damage);
             }
         }
     }
@@ -49,7 +52,7 @@ public class EnemyMeleeAttack : AttackMelee
         if (other.CompareTag("Player"))
         {
             SetTarget(other.transform);
-           GetComponent<EnemyStateMachine>().ChangeState(new EnemyAttackMeleeState());
+         
         }
     }
 

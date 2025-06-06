@@ -15,34 +15,61 @@ public class EnemyChaseState : IEnemyState
             Debug.LogError("EnemyController is null in EnemyChaseState");
             return;
         }
-        _enemy.SetMoving(true);
-        _enemy.animHandler.SetBool("Moving", true);
-        _enemy.animHandler.SetBool("isAttacking", false);
-    }
 
+        _enemy.agent.isStopped = false; 
+
+        _enemy.SetMoving(true);
+        _enemy.animHandler.SafeSetBool("Moving", true);
+        _enemy.animHandler.SafeSetBool("isAttackingMelee", false);
+        _enemy.animHandler.SafeSetBool("isAttackingRange", false);
+    }
     public void UpdateState() // Called every frame while the enemy is in the chase state
     {
+        if (_enemy == null)
+        {
+            Debug.LogError("EnemyController is null in EnemyChaseState.UpdateState");
+            return;
+        }
+
         if (_enemy.currentTarget != null)
         {
-            float distance = Vector2.Distance(_enemy.transform.position, _enemy.currentTarget.position);
+            Transform target = _enemy.currentTarget;
+            var attackStrategy = _enemy.GetAttackStrategy();
 
-            if (distance <= _enemy.GetComponent<EnemyMeleeAttack>().AttackRange)
+            if (attackStrategy == null)
             {
-                _enemy.agent.isStopped = true;
-                _enemy.agent.velocity = Vector3.zero;
-                _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyAttackMeleeState());
+                Debug.LogError("Attack strategy is null in EnemyChaseState.UpdateState");
                 return;
             }
 
-            _enemy.MoveTo(_enemy.currentTarget.position);
-            UpdateDirectionAnimation();
-        }
+            float distance = Vector2.Distance(_enemy.transform.position, target.position);
+            float attackRange = attackStrategy.GetAttackRange();
 
+            if (distance <= attackRange)
+            {
+                _enemy.agent.isStopped = true;
+                _enemy.agent.velocity = Vector3.zero;
+                _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyAttackState());
+                return;
+            }
+
+            if (_enemy.shouldChasePlayer)
+            {
+                _enemy.MoveTo(target.position);
+                UpdateDirectionAnimation();
+            }
+            else
+            {
+                _enemy.agent.isStopped = true;
+                _enemy.agent.velocity = Vector3.zero;
+            }
+        }
     }
+
     public void ExitState()  // Called when the enemy exits the chase state
     {
         SaveLastDirection();
-        _enemy.animHandler.SetBool("Moving", false);
+        _enemy.animHandler.SafeSetBool("Moving", false);
         _enemy.SetMoving(false);
     }
 

@@ -30,8 +30,10 @@ public class EnemyHealth : HealthSystem
             Debug.LogWarning(" Missing EnemyDamageFeedbackHandler ");
 
         _meleeAttack = GetComponent<EnemyMeleeAttack>();
-        if (_meleeAttack == null)
-            Debug.LogWarning(" Missing EnemyMeleeAttack ");
+        EnemyRangedAttack rangedAttack = GetComponent<EnemyRangedAttack>();
+
+        if (_meleeAttack == null && rangedAttack == null)
+            Debug.LogWarning("Enemy has no attack script: missing both EnemyMeleeAttack and EnemyRangedAttack.");
 
         _agent = GetComponent<NavMeshAgent>();
         if (_agent == null)

@@ -23,11 +23,41 @@ public class AnimationControllerHandler : MonoBehaviour
 
     public void SetBool(string parameter, bool value) // Used to control animations based on true/false conditions.
     {
-        _animator.SetBool(parameter, value);
+        if (HasParameter(parameter))
+        {
+            _animator.SetBool(parameter, value);
+        }
+        else
+        {
+            Debug.LogWarning("Animator parameter does not exist ");
+        }
     }
 
     public void SetFloat(string parameter, float value) // Used to control animations based on numeric values.
     {
         _animator.SetFloat(parameter, value);
+    }
+
+    public void SafeSetBool(string parameter, bool value)
+    {
+        if (HasParameter(parameter))
+        {
+            _animator.SetBool(parameter, value);
+        }
+    }
+    public bool HasParameter(string paramName)
+    {
+        if (_animator == null)
+        {
+            Debug.LogError("Animator is null in AnimationControllerHandler");
+            return false;
+        }
+
+        foreach (AnimatorControllerParameter param in _animator.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+        return false;
     }
 }
