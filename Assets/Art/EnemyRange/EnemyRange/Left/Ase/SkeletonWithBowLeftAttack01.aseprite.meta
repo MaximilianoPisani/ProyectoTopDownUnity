@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SkeletonWithBowLeftAttack01_Frame_0
     originalName: 
-    pivot: {x: 0.55, y: -0.23333333}
+    pivot: {x: 0.5340651, y: 0.34033814}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 78}
   - name: SkeletonWithBowLeftAttack01_Frame_1
     originalName: 
-    pivot: {x: 0.5789473, y: -0.2}
+    pivot: {x: 0.53701216, y: 0.39491907}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 116}
   - name: SkeletonWithBowLeftAttack01_Frame_2
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.58733416, y: 0.28764817}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 192}
   - name: SkeletonWithBowLeftAttack01_Frame_3
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.612495, y: 0.43051594}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 44, y: 4}
   - name: SkeletonWithBowLeftAttack01_Frame_4
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.50346416, y: 0.47997022}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 44, y: 41}
   - name: SkeletonWithBowLeftAttack01_Frame_5
     originalName: 
-    pivot: {x: 0.5789473, y: -0.2}
+    pivot: {x: 0.5537859, y: 0.37367198}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 154}
   - name: SkeletonWithBowLeftAttack01_Frame_6
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.6041089, y: 0.38106194}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -263,7 +263,7 @@ ScriptedImporter:
     uvTransform: {x: 44, y: 78}
   - name: SkeletonWithBowLeftAttack01_Frame_7
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.5202386, y: 0.40304196}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -283,7 +283,7 @@ ScriptedImporter:
     uvTransform: {x: 44, y: 115}
   - name: SkeletonWithBowLeftAttack01_Frame_8
     originalName: 
-    pivot: {x: 0.75, y: -0.20689656}
+    pivot: {x: 0.7201213, y: 0.44150648}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -303,7 +303,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: SkeletonWithBowLeftAttack01_Frame_9
     originalName: 
-    pivot: {x: 0.73333335, y: -0.20689656}
+    pivot: {x: 0.7067746, y: 0.4689814}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -323,7 +323,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 41}
   - name: SkeletonWithBowLeftAttack01_Frame_10
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.5957212, y: 0.3645772}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -343,7 +343,7 @@ ScriptedImporter:
     uvTransform: {x: 44, y: 152}
   - name: SkeletonWithBowLeftAttack01_Frame_11
     originalName: 
-    pivot: {x: 0.5789473, y: -0.20689656}
+    pivot: {x: 0.5621737, y: 0.44150674}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SkeletonWithBowLefttDeath_Frame_0
     originalName: 
-    pivot: {x: 0.55, y: -0.23333333}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 39, y: 41}
   - name: SkeletonWithBowLefttDeath_Frame_1
     originalName: 
-    pivot: {x: 0.48, y: -0.3448276}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 41, y: 4}
   - name: SkeletonWithBowLefttDeath_Frame_2
     originalName: 
-    pivot: {x: 0.48148146, y: -0.3548387}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 41}
   - name: SkeletonWithBowLefttDeath_Frame_3
     originalName: 
-    pivot: {x: 0.5172414, y: -0.1724138}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: SkeletonWithBowLefttDeath_Frame_4
     originalName: 
-    pivot: {x: 0.4736842, y: -0.33333334}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 74, y: 4}
   - name: SkeletonWithBowLefttDeath_Frame_5
     originalName: 
-    pivot: {x: 0.4736842, y: -0.33333334}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 101, y: 4}
   - name: SkeletonWithBowLefttDeath_Frame_6
     originalName: 
-    pivot: {x: 0.4736842, y: -0.33333334}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 67, y: 41}
   - name: SkeletonWithBowLefttDeath_Frame_7
     originalName: 
-    pivot: {x: 0.4736842, y: -0.33333334}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SkeletonWithBowUpAttack01_Frame_1
     originalName: 
-    pivot: {x: 0.50000006, y: -0.125}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 106}
   - name: SkeletonWithBowUpAttack01_Frame_2
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 186}
   - name: SkeletonWithBowUpAttack01_Frame_3
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 32, y: 4}
   - name: SkeletonWithBowUpAttack01_Frame_4
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 32, y: 43}
   - name: SkeletonWithBowUpAttack01_Frame_5
     originalName: 
-    pivot: {x: 0.50000006, y: -0.125}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 146}
   - name: SkeletonWithBowUpAttack01_Frame_6
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 32, y: 82}
   - name: SkeletonWithBowUpAttack01_Frame_7
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 32, y: 121}
   - name: SkeletonWithBowUpAttack01_Frame_8
     originalName: 
-    pivot: {x: 0.50000006, y: -0.09302326}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -283,8 +283,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: SkeletonWithBowUpAttack01_Frame_9
     originalName: 
-    pivot: {x: 0.50000006, y: -0.09302326}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -303,8 +303,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 55}
   - name: SkeletonWithBowUpAttack01_Frame_10
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -323,8 +323,8 @@ ScriptedImporter:
     uvTransform: {x: 32, y: 160}
   - name: SkeletonWithBowUpAttack01_Frame_11
     originalName: 
-    pivot: {x: 0.50000006, y: -0.12903225}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -343,8 +343,8 @@ ScriptedImporter:
     uvTransform: {x: 32, y: 199}
   - name: SkeletonWithBowUpAttack01_Frame_0
     originalName: 
-    pivot: {x: 0.44444442, y: -0.23333333}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

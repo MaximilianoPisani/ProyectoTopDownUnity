@@ -1,0 +1,1781 @@
+fileFormatVersion: 2
+guid: 492fe2e3898493d428464b7276800db1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6067f384f0d72ac46ae3f58ad2fe124f
+      internalID: 1767293634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17a3b0ffdb520049b085952e60990e4
+      internalID: -1032433841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ba2af7bb046784397cd801eedbb482
+      internalID: -594165944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c839cfbf268e0534eb64c5d80c0538a6
+      internalID: -1606133960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407873d537b9a2a42ab3cfc8fbfcef13
+      internalID: -1993461158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c9b7496f1c6054d88ca1dc1539e4c0
+      internalID: -636191820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1b53035a315cc4cb60bdb969040847
+      internalID: 194309634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c236462b6cdb10a47a3a848fcad012d9
+      internalID: 643946301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffb7c973cc1df64d9604693f81022c3
+      internalID: 1695499160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c3d4b681062014f810225a1fe22743
+      internalID: -1782464987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 492
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5158e74d463fcc643a3284718b4d9613
+      internalID: -2128389742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c915de99f291d14288b584ef613b3a1
+      internalID: -1210851907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f3d5873abd1df4c87c4d3eb88e080d
+      internalID: -776164089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b2ec902b7d43d499c7e2d0d36a6d5a
+      internalID: 1929609847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143c27d0ce195104e8133c735706d046
+      internalID: -605355854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efadd32ac1049b499cde11e99bc592a
+      internalID: -184035353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db53dda233a45ac4f866c078e1c287ee
+      internalID: -1989150889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_17
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cf3efcd6781834dbb42b8fc092c436
+      internalID: 88899400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_18
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d746f356bf1c9a44a436e2bd09c5220
+      internalID: 545840664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317ceaa692a30634b8540029fd4037df
+      internalID: -1600910922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_20
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b29aeb8cdad314eb16a5f89f96a0b6
+      internalID: 443717491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_21
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 444
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a580a64c7198314db7640f1d0d2dcb7
+      internalID: -356157304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5acaa02b284ba49b455c935fbe4643
+      internalID: 1319274692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f051258e18ef40649bc26a1397f0c4ca
+      internalID: 844630270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_24
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd80faac3682ea4299365036008d9ef
+      internalID: -2072674653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_25
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35805cf5d1f2bff479aeace838ceee47
+      internalID: 58332850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_26
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7469039ed652e7e489202396f2e660ea
+      internalID: -35603199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c695c21af63524fb9c54ae540936bb
+      internalID: -853126245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_28
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e3e50385a966448ad9a2506cc4639b
+      internalID: 756738461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_29
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 396
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42674ba43976774449a7ce6c60d5b5f7
+      internalID: -678360379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e001dacb63658488073a85633c61f7
+      internalID: 258783611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d81550bf1caf54699800d54ff77f67
+      internalID: -43563745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62e6bcb5de8647479c20047c098d332
+      internalID: -536311876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3465588932feede4bba57e7bfaa65c77
+      internalID: -766516436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737e3389b7e68e34890d13ba3e24d943
+      internalID: -1067219669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac72eb0b1cf9f824b915eb063f128ca8
+      internalID: 437842815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_36
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9c87a8740e2f24aa927672a17fa42e
+      internalID: 1612509526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_37
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 348
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed786b394b0f7b94d856bd0ad718500a
+      internalID: 1653224166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa6589d5f38e2c41bc88a31c206fc74
+      internalID: -2048539894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_39
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bba3764ab88d3a45ade9c65fea5cbe4
+      internalID: 1684829524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_40
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d577f3a2ac4a45d4cbd759ecfd903592
+      internalID: 1686342192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e077376f26c08db4e8d8bbcb5295d06b
+      internalID: -12730649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12b46b1c7e46ec4b9217b144d5c5507
+      internalID: 2055442237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_43
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166cb6dda42da1547a6ea21e5cd6911c
+      internalID: -953226007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_44
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29252d438546da845b6966f5b0f60b79
+      internalID: -1519949896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a2e81d9e4ae10428e7c50fc9bb3599
+      internalID: 497996035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_46
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 300
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0876d597efaaabd47a93960c471fb3c4
+      internalID: 1980205881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_47
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 252
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a77552d85c01a4891264a479344ade
+      internalID: -1949832227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_48
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 252
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1479612eccc4d0842bc4bff3af37c2a4
+      internalID: 118507081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_49
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 252
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a800462d37ca84f91125f47369602f
+      internalID: -1531312887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_50
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 252
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8778b59943d9a184ebaf0fc2ba91b642
+      internalID: -1472348623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_51
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 252
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e319b6f2f5570c48be72b8e62a82863
+      internalID: 1905125907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_52
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 204
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42770144778c34a4591aeffbeab00e3a
+      internalID: 895965572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 204
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749be6f8c4508554c8b73198bec42fe0
+      internalID: -989692336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_54
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 204
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a563dcf2a3c709142a8ff52e28ae4e82
+      internalID: -851328864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_55
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 204
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49aecf0676b3e5540b870cf657b865f5
+      internalID: 1386927294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72566e43164ea5945aaf02a0f9102480
+      internalID: -866120812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_57
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53cc045dbe8f574fa2d8da97e28a2ce
+      internalID: 240135223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_58
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f719a302998c848afc5c265d5dd50f
+      internalID: 1941657552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_59
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3597490950744c845b0d5a8b05917fb1
+      internalID: -472483997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_60
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9d773a384331f4a86cc21ac3513122
+      internalID: -1902667947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_61
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37475b18543b9044f992a91bf4a23691
+      internalID: 306238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_62
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578685e69429fbd429c04ab4be1e1752
+      internalID: -953548247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_63
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 156
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78354588875efb54a8c555e5eff22f5a
+      internalID: 1730341655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f9dab9177849a4f8e0bbb56e9c4a55
+      internalID: -1664363021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_65
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 108
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7b685f94903cc40aaf844451ec03dd
+      internalID: 352984728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 108
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8789dc64a02c224c88569d3cb91a2d6
+      internalID: -1819000483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_67
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 108
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b621ca84702164ba8489135d0da072
+      internalID: -1071041856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_68
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 108
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea1e62935c8018049bec34ed58754bc1
+      internalID: -1257438221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_69
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 108
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1ec2c33134c3448bb7e2d3da1b6cd7
+      internalID: 1796029792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_70
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 60
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f5bd18fa248c4469d4ee312df10c5e
+      internalID: -1026613250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_71
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 60
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00532972061bc594bafc1aad1ae45a73
+      internalID: 1955028462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_72
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 12
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5220cb5ab457c64e8f6af7eecf3f1c6
+      internalID: 2135838445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr-rutas-rotas-48 1_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 12
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9318c5682f75e4b8926c91dc09e40b
+      internalID: 1776707576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spr-rutas-rotas-48 1_0: 1767293634
+      spr-rutas-rotas-48 1_1: -1032433841
+      spr-rutas-rotas-48 1_10: -2128389742
+      spr-rutas-rotas-48 1_11: -1210851907
+      spr-rutas-rotas-48 1_12: -776164089
+      spr-rutas-rotas-48 1_13: 1929609847
+      spr-rutas-rotas-48 1_14: -605355854
+      spr-rutas-rotas-48 1_15: -184035353
+      spr-rutas-rotas-48 1_16: -1989150889
+      spr-rutas-rotas-48 1_17: 88899400
+      spr-rutas-rotas-48 1_18: 545840664
+      spr-rutas-rotas-48 1_19: -1600910922
+      spr-rutas-rotas-48 1_2: -594165944
+      spr-rutas-rotas-48 1_20: 443717491
+      spr-rutas-rotas-48 1_21: -356157304
+      spr-rutas-rotas-48 1_22: 1319274692
+      spr-rutas-rotas-48 1_23: 844630270
+      spr-rutas-rotas-48 1_24: -2072674653
+      spr-rutas-rotas-48 1_25: 58332850
+      spr-rutas-rotas-48 1_26: -35603199
+      spr-rutas-rotas-48 1_27: -853126245
+      spr-rutas-rotas-48 1_28: 756738461
+      spr-rutas-rotas-48 1_29: -678360379
+      spr-rutas-rotas-48 1_3: -1606133960
+      spr-rutas-rotas-48 1_30: 258783611
+      spr-rutas-rotas-48 1_31: -43563745
+      spr-rutas-rotas-48 1_32: -536311876
+      spr-rutas-rotas-48 1_33: -766516436
+      spr-rutas-rotas-48 1_34: -1067219669
+      spr-rutas-rotas-48 1_35: 437842815
+      spr-rutas-rotas-48 1_36: 1612509526
+      spr-rutas-rotas-48 1_37: 1653224166
+      spr-rutas-rotas-48 1_38: -2048539894
+      spr-rutas-rotas-48 1_39: 1684829524
+      spr-rutas-rotas-48 1_4: -1993461158
+      spr-rutas-rotas-48 1_40: 1686342192
+      spr-rutas-rotas-48 1_41: -12730649
+      spr-rutas-rotas-48 1_42: 2055442237
+      spr-rutas-rotas-48 1_43: -953226007
+      spr-rutas-rotas-48 1_44: -1519949896
+      spr-rutas-rotas-48 1_45: 497996035
+      spr-rutas-rotas-48 1_46: 1980205881
+      spr-rutas-rotas-48 1_47: -1949832227
+      spr-rutas-rotas-48 1_48: 118507081
+      spr-rutas-rotas-48 1_49: -1531312887
+      spr-rutas-rotas-48 1_5: -636191820
+      spr-rutas-rotas-48 1_50: -1472348623
+      spr-rutas-rotas-48 1_51: 1905125907
+      spr-rutas-rotas-48 1_52: 895965572
+      spr-rutas-rotas-48 1_53: -989692336
+      spr-rutas-rotas-48 1_54: -851328864
+      spr-rutas-rotas-48 1_55: 1386927294
+      spr-rutas-rotas-48 1_56: -866120812
+      spr-rutas-rotas-48 1_57: 240135223
+      spr-rutas-rotas-48 1_58: 1941657552
+      spr-rutas-rotas-48 1_59: -472483997
+      spr-rutas-rotas-48 1_6: 194309634
+      spr-rutas-rotas-48 1_60: -1902667947
+      spr-rutas-rotas-48 1_61: 306238
+      spr-rutas-rotas-48 1_62: -953548247
+      spr-rutas-rotas-48 1_63: 1730341655
+      spr-rutas-rotas-48 1_64: -1664363021
+      spr-rutas-rotas-48 1_65: 352984728
+      spr-rutas-rotas-48 1_66: -1819000483
+      spr-rutas-rotas-48 1_67: -1071041856
+      spr-rutas-rotas-48 1_68: -1257438221
+      spr-rutas-rotas-48 1_69: 1796029792
+      spr-rutas-rotas-48 1_7: 643946301
+      spr-rutas-rotas-48 1_70: -1026613250
+      spr-rutas-rotas-48 1_71: 1955028462
+      spr-rutas-rotas-48 1_72: 2135838445
+      spr-rutas-rotas-48 1_73: 1776707576
+      spr-rutas-rotas-48 1_8: 1695499160
+      spr-rutas-rotas-48 1_9: -1782464987
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,53 +7,75 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
 {
     [SerializeField] private float _invulnerabilityDuration = 1f;
     [SerializeField] private float _flashInterval = 0.1f;
+    [SerializeField] private Color _damageColor = Color.red;
 
     private EnemyController _enemyController;
     private SpriteRenderer _spriteRenderer;
-    private MonoBehaviour _enemyAttack; // Puede ser melee o ranged
+    private MonoBehaviour _enemyAttack;
+    private Color _originalColor;
 
     private void Awake()
     {
         _enemyController = GetComponent<EnemyController>();
         if (_enemyController == null)
-            Debug.LogWarning("Missing EnemyController ");
+            Debug.LogWarning("Missing EnemyController");
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (_spriteRenderer == null)
-            Debug.LogWarning("Missing SpriteRenderer ");
+            Debug.LogWarning("Missing SpriteRenderer");
+        else
+            _originalColor = _spriteRenderer.color;
 
         _enemyAttack = GetComponent<EnemyMeleeAttack>() as MonoBehaviour;
         if (_enemyAttack == null)
             _enemyAttack = GetComponent<EnemyRangedAttack>();
-
-        // No warning si no tiene ataque, puede ser normal
     }
 
-    public IEnumerator PlayFeedback() // Coroutine to play feedback when enemy takes damage
+    public IEnumerator PlayFeedback()
     {
-        if (_enemyController != null)
-            _enemyController.SetEnemyActive(false);
-
-        if (_enemyAttack != null)
-            _enemyAttack.enabled = false;
-
-        float elapsed = 0f;
-        while (elapsed < _invulnerabilityDuration)
+        try
         {
-            if (_spriteRenderer != null)
-                _spriteRenderer.enabled = !_spriteRenderer.enabled;
+            if (_enemyController != null)
+                _enemyController.SetEnemyActive(false);
 
-            yield return new WaitForSeconds(_flashInterval);
-            elapsed += _flashInterval;
+            if (_enemyAttack != null)
+                _enemyAttack.enabled = false;
+
+            float elapsed = 0f;
+            bool visible = true;
+
+            while (elapsed < _invulnerabilityDuration)
+            {
+                if (_spriteRenderer != null)
+                {
+                  
+                    visible = !visible;
+                    _spriteRenderer.enabled = visible;
+
+                    if (visible)
+                        _spriteRenderer.color = _damageColor;
+                    else
+                        _spriteRenderer.color = _originalColor;
+                }
+
+                yield return new WaitForSeconds(_flashInterval);
+                elapsed += _flashInterval;
+            }
         }
+        finally
+        {
+     
+            if (_spriteRenderer != null)
+            {
+                _spriteRenderer.enabled = true;
+                _spriteRenderer.color = _originalColor;
+            }
 
-        if (_spriteRenderer != null)
-            _spriteRenderer.enabled = true;
+            if (_enemyController != null)
+                _enemyController.SetEnemyActive(true);
 
-        if (_enemyController != null)
-            _enemyController.SetEnemyActive(true);
-
-        if (_enemyAttack != null)
-            _enemyAttack.enabled = true;
+            if (_enemyAttack != null)
+                _enemyAttack.enabled = true;
+        }
     }
 }

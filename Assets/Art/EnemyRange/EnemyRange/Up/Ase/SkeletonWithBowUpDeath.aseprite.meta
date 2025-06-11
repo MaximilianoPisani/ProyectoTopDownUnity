@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SkeletonWithBowUpDeath_Frame_0
     originalName: 
-    pivot: {x: 0.4705882, y: -0.23333333}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 4}
   - name: SkeletonWithBowUpDeath_Frame_1
     originalName: 
-    pivot: {x: 0.47826084, y: -0.3448276}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 93}
   - name: SkeletonWithBowUpDeath_Frame_2
     originalName: 
-    pivot: {x: 0.49999997, y: -0.2647059}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 51}
   - name: SkeletonWithBowUpDeath_Frame_3
     originalName: 
-    pivot: {x: 0.50000006, y: -0.10256411}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: SkeletonWithBowUpDeath_Frame_4
     originalName: 
-    pivot: {x: 0.43750003, y: -0.115384616}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 42}
   - name: SkeletonWithBowUpDeath_Frame_5
     originalName: 
-    pivot: {x: 0.5294118, y: -0.27272728}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 40, y: 76}
   - name: SkeletonWithBowUpDeath_Frame_6
     originalName: 
-    pivot: {x: 0.5263158, y: -0.25}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 65, y: 4}
   - name: SkeletonWithBowUpDeath_Frame_7
     originalName: 
-    pivot: {x: 0.4666667, y: -0.27272728}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

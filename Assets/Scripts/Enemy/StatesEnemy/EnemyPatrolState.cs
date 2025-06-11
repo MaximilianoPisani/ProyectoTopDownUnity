@@ -77,7 +77,7 @@ public class EnemyPatrolState : IEnemyState
     {
         if (_enemy == null || _enemy.animHandler == null)
         {
-            // Evita NullReferenceException si no están inicializados
+         
             return;
         }
 

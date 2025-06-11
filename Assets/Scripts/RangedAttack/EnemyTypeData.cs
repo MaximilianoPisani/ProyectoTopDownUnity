@@ -15,6 +15,8 @@ public class EnemyTypeData : ScriptableObject // #TEST
                 return new MeleeEnemyFactory();
             case EnemyType.Ranged:
                 return new RangedEnemyFactory();
+            case EnemyType.Boss:
+                return new BossEnemyFactory();
             default:
                 Debug.LogError("Unsupported EnemyType: " + type);
                 return null;
@@ -25,5 +27,6 @@ public class EnemyTypeData : ScriptableObject // #TEST
 public enum EnemyType
 {
     Melee,
-    Ranged
+    Ranged,
+    Boss
 }

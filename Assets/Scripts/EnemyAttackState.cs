@@ -30,16 +30,25 @@ public class EnemyAttackState : IEnemyState //#TEST
         }
 
         float distance = Vector2.Distance(_enemy.transform.position, _enemy.currentTarget.position);
+        float attackRange = _attackStrategy.GetAttackRange();
 
-        if (distance > _attackStrategy.GetAttackRange())
+        if (distance > attackRange)
         {
-            _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyChaseState());
+            if (_enemy.shouldChasePlayer)
+            {
+
+                _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyChaseState());
+            }
+            else
+            {
+
+                _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyPatrolState());
+            }
             return;
         }
 
         _attackStrategy.ExecuteAttack(_enemy);
     }
-
     public void ExitState()
     {
         _enemy.agent.isStopped = false;

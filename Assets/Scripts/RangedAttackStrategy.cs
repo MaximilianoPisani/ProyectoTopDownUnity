@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class RangedAttackStrategy : IAttackStrategy
 { //#TEST
-    public float GetAttackRange()
+
+    private EnemyRangedAttack _rangedAttack;
+
+    public RangedAttackStrategy(EnemyController enemy)
     {
-        return 5f; 
+        _rangedAttack = enemy.GetComponent<EnemyRangedAttack>();
+        if (_rangedAttack == null)
+            Debug.LogError("AttackRanged component missing on enemy!");
     }
+
+    public float GetAttackRange() => 5f;
 
     public void ExecuteAttack(EnemyController enemy)
     {
-        var ranged = enemy.GetComponent<AttackRanged>();
-        ranged?.TryAttack(); 
+        if (enemy.currentTarget == null) return;
+        _rangedAttack?.TryAttack();
     }
 }

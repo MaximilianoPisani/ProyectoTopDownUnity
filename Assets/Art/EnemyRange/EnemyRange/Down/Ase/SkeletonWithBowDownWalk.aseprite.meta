@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SkeletonWithBowDownWalk_Frame_0
     originalName: 
-    pivot: {x: 0.5294118, y: -0.23333333}
+    pivot: {x: 0.45276064, y: 0.34995085}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: SkeletonWithBowDownWalk_Frame_1
     originalName: 
-    pivot: {x: 0.49999997, y: -0.2758621}
+    pivot: {x: 0.46509647, y: 0.44949934}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 29, y: 41}
   - name: SkeletonWithBowDownWalk_Frame_2
     originalName: 
-    pivot: {x: 0.49999997, y: -0.31034485}
+    pivot: {x: 0.5581732, y: 0.3829209}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 29, y: 78}
   - name: SkeletonWithBowDownWalk_Frame_3
     originalName: 
-    pivot: {x: 0.5294118, y: -0.23333333}
+    pivot: {x: 0.50751203, y: 0.4368234}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 42}
   - name: SkeletonWithBowDownWalk_Frame_4
     originalName: 
-    pivot: {x: 0.5882353, y: -0.2758621}
+    pivot: {x: 0.57728547, y: 0.41098443}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 80}
   - name: SkeletonWithBowDownWalk_Frame_5
     originalName: 
-    pivot: {x: 0.5882353, y: -0.31034485}
+    pivot: {x: 0.56633466, y: 0.3572446}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

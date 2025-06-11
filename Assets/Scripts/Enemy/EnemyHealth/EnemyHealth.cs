@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,13 @@ public class EnemyHealth : HealthSystem
     private AnimationControllerHandler _animHandler;
     private EnemyDamageFeedbackHandler _feedbackHandler;
     private EnemyMeleeAttack _meleeAttack;
+    private EnemyRangedAttack _rangedAttack;
     private NavMeshAgent _agent;
 
     private bool _isDead = false;
     private bool _isInvulnerable = false;
 
+    public static event Action<EnemyHealth> OnEnemyDied;
     protected override void Start()
     {
         base.Start();
@@ -28,20 +31,21 @@ public class EnemyHealth : HealthSystem
         _feedbackHandler = GetComponent<EnemyDamageFeedbackHandler>();
         if (_feedbackHandler == null)
             Debug.LogWarning(" Missing EnemyDamageFeedbackHandler ");
-
+        
         _meleeAttack = GetComponent<EnemyMeleeAttack>();
-        EnemyRangedAttack rangedAttack = GetComponent<EnemyRangedAttack>();
+        _rangedAttack = GetComponent<EnemyRangedAttack>();
 
-        if (_meleeAttack == null && rangedAttack == null)
+        if (_meleeAttack == null && _rangedAttack == null)
             Debug.LogWarning("Enemy has no attack script: missing both EnemyMeleeAttack and EnemyRangedAttack.");
 
         _agent = GetComponent<NavMeshAgent>();
         if (_agent == null)
             Debug.LogWarning("Missing NavMeshAgent ");
+
     }
 
 
-    public override void TakeDamage(int amount) // Called when the enemy takes damage
+    public override void TakeDamage(int amount)
     {
         if (_isDead || _isInvulnerable) return;
 
@@ -53,7 +57,22 @@ public class EnemyHealth : HealthSystem
                 StartCoroutine(DamageFeedbackCoroutine());
 
             if (_enemyController != null)
-                _enemyController.SetEnemyActive(false); 
+            {
+                if (_enemyController.HasSeenPlayer)
+                {
+                 
+                    return;
+                }
+
+
+
+                _enemyController.SetEnemyActive(false);
+                _enemyController.agent.velocity = Vector3.zero;
+                _enemyController.SetMoving(false);
+                _enemyController.agent.isStopped = true;
+                _enemyController.ResetTarget();
+                _enemyController.GetComponent<EnemyStateMachine>().ChangeState(new EnemyIdleState());
+            }
         }
     }
     private IEnumerator DamageFeedbackCoroutine() // Coroutine to handle temporary invulnerability and feedback after taking damage
@@ -78,6 +97,8 @@ public class EnemyHealth : HealthSystem
     {
         _isDead = true;
         _isInvulnerable = false;
+
+        OnEnemyDied?.Invoke(this);
 
         if (_agent != null)
         {

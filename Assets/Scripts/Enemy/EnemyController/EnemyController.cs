@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private float _patrolWaitDuration = 1.5f;
-
     [SerializeField] private bool _shouldChasePlayer = true;
 
     public AnimationControllerHandler animHandler { get; private set; }
@@ -17,13 +16,12 @@ public class EnemyController : MonoBehaviour
     public IAttackStrategy attackStrategy { get; private set; }
 
     private EnemyStateMachine _stateMachine;
-    private IEnemyState _currentState;
-
     private bool _isMovementEnabled = true;
     private bool _isMoving;
     private bool _hasSeenPlayer = false;
-
+    public bool HasSeenPlayer => _hasSeenPlayer;
     public bool shouldChasePlayer => _shouldChasePlayer;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -32,13 +30,10 @@ public class EnemyController : MonoBehaviour
 
         if (agent == null)
             Debug.LogError("Missing NavMeshAgent component.");
-
         if (animHandler == null)
             Debug.LogError("Missing AnimationControllerHandler component.");
-
         if (_stateMachine == null)
             Debug.LogError("Missing EnemyStateMachine component.");
-
         if (enemyTypeData == null)
         {
             Debug.LogError("EnemyTypeData not assigned in " + gameObject.name);
@@ -46,18 +41,29 @@ public class EnemyController : MonoBehaviour
         }
 
         var factory = enemyTypeData.CreateFactory();
-        if (factory == null)
+
+        if (factory is MeleeEnemyFactory)
         {
-            Debug.LogError("Could not create factory for " + gameObject.name);
-            return;
+            _shouldChasePlayer = true; 
+            attackStrategy = new MeleeAttackStrategy(this);
+        }
+        else if (factory is RangedEnemyFactory)
+        {
+            _shouldChasePlayer = false; 
+            attackStrategy = new RangedAttackStrategy(this);
+        }
+        else if (factory is BossEnemyFactory)
+        {
+            _shouldChasePlayer = true; 
+            attackStrategy = new ComboAttackStrategy(this);
+        }
+        else
+        {
+            Debug.LogError("Unknown factory type for " + gameObject.name);
         }
 
-       
-        attackStrategy = factory is MeleeEnemyFactory
-            ? new MeleeAttackStrategy()
-            : new RangedAttackStrategy();
+        SetAttackStrategy(attackStrategy);
 
-        SetAttackStrategy(attackStrategy); 
 
         var initialState = factory.CreateInitialState(this);
         if (initialState == null)
@@ -79,20 +85,17 @@ public class EnemyController : MonoBehaviour
             _stateMachine.UpdateState();
         }
     }
-    public IAttackStrategy GetAttackStrategy()
-    {
-        return attackStrategy;
-    }
+
+    public IAttackStrategy GetAttackStrategy() => attackStrategy;
+
     public void SetAttackStrategy(IAttackStrategy strategy)
     {
         attackStrategy = strategy;
-        attackStrategy = strategy;
     }
-    public float GetPatrolWaitDuration() // Returns how long the enemy waits at patrol points
-    {
-        return _patrolWaitDuration;
-    }
-    public void OnTargetEnterVision(Transform target) // Called when a target (the player) enters the enemy’s vision
+
+    public float GetPatrolWaitDuration() => _patrolWaitDuration;
+
+    public void OnTargetEnterVision(Transform target)
     {
         currentTarget = target;
 
@@ -102,28 +105,30 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            _stateMachine.ChangeState(new EnemyAttackState()); 
+            _stateMachine.ChangeState(new EnemyAttackState());
         }
     }
-    public void OnTargetExitVision() // Called when the target exits vision
+
+    public void OnTargetExitVision()
     {
         currentTarget = null;
         _hasSeenPlayer = true;
 
         _stateMachine.ChangeState(new EnemyIdleState());
     }
-    public void SetTarget(Transform target) // Set the current target manually
+
+    public void SetTarget(Transform target)
     {
         currentTarget = target;
     }
 
-    public void MoveTo(Vector3 destination) // Orders the enemy to move to a specific location using NavMesh
+    public void MoveTo(Vector3 destination)
     {
         if (_isMovementEnabled)
             agent.SetDestination(destination);
     }
 
-    public void SetEnemyActive(bool isActive) // Enables or disables enemy movement and animation
+    public void SetEnemyActive(bool isActive)
     {
         _isMovementEnabled = isActive;
         agent.isStopped = !isActive;
@@ -145,14 +150,16 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void SetMoving(bool isMoving) // Used to control if the enemy is currently moving
+    public void ResetTarget()
+    {
+        currentTarget = null;
+        _hasSeenPlayer = false;
+    }
+
+    public void SetMoving(bool isMoving)
     {
         _isMoving = isMoving;
     }
-   
 
-    public Transform[] GetPatrolPoints() // Returns the patrol points assigned to this enemy
-    {
-        return _patrolPoints;
-    }
+    public Transform[] GetPatrolPoints() => _patrolPoints;
 }

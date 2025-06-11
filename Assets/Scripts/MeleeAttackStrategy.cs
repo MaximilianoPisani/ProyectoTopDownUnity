@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class MeleeAttackStrategy : IAttackStrategy // #TEST
 {
-    public float GetAttackRange()
+    private EnemyMeleeAttack _meleeAttack;
+
+    public MeleeAttackStrategy(EnemyController enemy)
     {
-        return 1.5f;
+        _meleeAttack = enemy.GetComponent<EnemyMeleeAttack>();
+        if (_meleeAttack == null)
+            Debug.LogError("EnemyMeleeAttack component missing on enemy!");
     }
+
+    public float GetAttackRange() => 1.5f;
 
     public void ExecuteAttack(EnemyController enemy)
     {
         if (enemy.currentTarget == null) return;
-
-        var melee = enemy.GetComponent<EnemyMeleeAttack>();
-        melee?.UpdateAttack(); 
+        _meleeAttack?.UpdateAttack();
     }
 }
