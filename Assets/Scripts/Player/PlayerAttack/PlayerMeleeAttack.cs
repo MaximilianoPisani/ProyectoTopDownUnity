@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerMeleeAttack : AttackMelee
 {
-    
+    private bool _bufferedAttack = false;
+    private float _bufferTime = 0.1f;
+    private float _bufferTimer = 0f;
+
+    private bool _isAlive = true;
     private void Update()
     {
+        if (!_isAlive) return;
+
         float lx = animHandler.Animator.GetFloat("LastX");
         float ly = animHandler.Animator.GetFloat("LastY");
         lastLookDirection = new Vector2(lx, ly).normalized;
@@ -15,13 +21,50 @@ public class PlayerMeleeAttack : AttackMelee
 
         if (Input.GetMouseButtonDown(0))
         {
-            TryAttack();
+            if (HasWeaponEquipped())
+            {
+                TryAttack();
+            }
+            else
+            {
+                _bufferedAttack = true;
+                _bufferTimer = _bufferTime;
+            }
+        }
+
+        if (_bufferedAttack)
+        {
+            _bufferTimer -= Time.deltaTime;
+
+            if (_bufferTimer <= 0f)
+            {
+                _bufferedAttack = false;
+            }
+            else if (HasWeaponEquipped())
+            {
+                TryAttack();
+                _bufferedAttack = false;
+            }
+        }
+    }
+    public void ResetAttackInput()
+    {
+        _bufferedAttack = false;
+        _bufferTimer = 0f;
+
+        if (animHandler != null)
+        {
+            animHandler.SetBool("isAttacking", false);
         }
     }
 
-
-    public override void ApplyDamage() // ApplyDamage to apply damage in specific frames only (Animations + Events).
+    private bool HasWeaponEquipped()
     {
-        base.ApplyDamage(); 
+        return GetComponent<WeaponManager>().currentWeapon != null;
+    }
+
+    public override void ApplyDamage()
+    {
+        base.ApplyDamage();
     }
 }

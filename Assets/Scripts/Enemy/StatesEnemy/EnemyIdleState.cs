@@ -15,8 +15,18 @@ public class EnemyIdleState : IEnemyState
             return;
         }
 
-        _enemy.SetMoving(false);
+ 
+        Vector2 lastVelocity = _enemy.agent.velocity;
+        if (lastVelocity.sqrMagnitude > 0.01f)
+        {
+            lastVelocity.Normalize();
+            _enemy.animHandler.SetFloat("LastX", lastVelocity.x);
+            _enemy.animHandler.SetFloat("LastY", lastVelocity.y);
+            _enemy.UpdateLookDirection(lastVelocity); 
+        }
 
+
+        _enemy.SetMoving(false);
         _enemy.agent.isStopped = true;
         _enemy.agent.velocity = Vector3.zero;
 
@@ -27,15 +37,6 @@ public class EnemyIdleState : IEnemyState
 
         if (_enemy.animHandler.HasParameter("isAttackingRange"))
             _enemy.animHandler.SetBool("isAttackingRange", false);
-
-        Vector2 lastVelocity = _enemy.agent.velocity;
-
-        if (lastVelocity.sqrMagnitude > 0.01f)
-        {
-            lastVelocity.Normalize();
-            _enemy.animHandler.SetFloat("LastX", lastVelocity.x);
-            _enemy.animHandler.SetFloat("LastY", lastVelocity.y);
-        }
     }
 
 

@@ -35,8 +35,7 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
     {
         try
         {
-            if (_enemyController != null)
-                _enemyController.SetEnemyActive(false);
+            _enemyController?.PauseMovement();
 
             if (_enemyAttack != null)
                 _enemyAttack.enabled = false;
@@ -48,7 +47,7 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
             {
                 if (_spriteRenderer != null)
                 {
-                  
+
                     visible = !visible;
                     _spriteRenderer.enabled = visible;
 
@@ -64,15 +63,14 @@ public class EnemyDamageFeedbackHandler : MonoBehaviour
         }
         finally
         {
-     
+
             if (_spriteRenderer != null)
             {
                 _spriteRenderer.enabled = true;
                 _spriteRenderer.color = _originalColor;
             }
 
-            if (_enemyController != null)
-                _enemyController.SetEnemyActive(true);
+            _enemyController?.ResumeMovement();
 
             if (_enemyAttack != null)
                 _enemyAttack.enabled = true;

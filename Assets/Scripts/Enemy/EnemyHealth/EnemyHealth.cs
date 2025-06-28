@@ -12,14 +12,37 @@ public class EnemyHealth : HealthSystem
     private EnemyMeleeAttack _meleeAttack;
     private EnemyRangedAttack _rangedAttack;
     private NavMeshAgent _agent;
+    private Collider2D _collider;
+
 
     private bool _isDead = false;
     private bool _isInvulnerable = false;
+    private int _startingHealth;
+    private bool _halfPhaseTriggered = false;
+    private int _maxHealthBeforeSplit;
+    private int _hitCount = 0;
 
+    [SerializeField] private bool resetHealthOnPlayerDeath = false;
+    [SerializeField] private bool enableHalfHealthEvent = false;
+    [SerializeField] private bool triggersGameEndOnDeath = false;
+    [SerializeField] private int hitsToTriggerTeleport = 2;
+    [SerializeField] private bool allowMultipleTeleports = true;
+    private bool _teleportPhaseActive = false;
+    public event Action OnTeleportPhaseTriggered;
+    public bool EnableHalfHealthEvent => enableHalfHealthEvent;
+
+    public event Action OnHalfHealthReached;
     public static event Action<EnemyHealth> OnEnemyDied;
     protected override void Start()
     {
+
         base.Start();
+        _collider = GetComponent<Collider2D>();
+
+        _startingHealth = health;
+        _maxHealthBeforeSplit = health;
+
+        PlayerHealth.OnPlayerDied += OnPlayerDiedHandler;
         _enemyController = GetComponent<EnemyController>();
         if (_enemyController == null)
             Debug.LogWarning(" Missing EnemyController ");
@@ -31,7 +54,7 @@ public class EnemyHealth : HealthSystem
         _feedbackHandler = GetComponent<EnemyDamageFeedbackHandler>();
         if (_feedbackHandler == null)
             Debug.LogWarning(" Missing EnemyDamageFeedbackHandler ");
-        
+
         _meleeAttack = GetComponent<EnemyMeleeAttack>();
         _rangedAttack = GetComponent<EnemyRangedAttack>();
 
@@ -44,12 +67,20 @@ public class EnemyHealth : HealthSystem
 
     }
 
-
     public override void TakeDamage(int amount)
     {
         if (_isDead || _isInvulnerable) return;
 
         base.TakeDamage(amount);
+
+        _hitCount++;
+
+        if (!_teleportPhaseActive && _hitCount >= hitsToTriggerTeleport)
+        {
+            _hitCount = 0;
+            _teleportPhaseActive = !allowMultipleTeleports;
+            OnTeleportPhaseTriggered?.Invoke();
+        }
 
         if (!_isDead)
         {
@@ -59,14 +90,8 @@ public class EnemyHealth : HealthSystem
             if (_enemyController != null)
             {
                 if (_enemyController.HasSeenPlayer)
-                {
-                 
                     return;
-                }
 
-
-
-                _enemyController.SetEnemyActive(false);
                 _enemyController.agent.velocity = Vector3.zero;
                 _enemyController.SetMoving(false);
                 _enemyController.agent.isStopped = true;
@@ -75,19 +100,49 @@ public class EnemyHealth : HealthSystem
             }
         }
     }
+    private void OnDestroy()
+    {
+        PlayerHealth.OnPlayerDied -= OnPlayerDiedHandler;
+    }
+
+    private void OnPlayerDiedHandler()
+    {
+        if (resetHealthOnPlayerDeath && !_isDead)
+        {
+            health = _startingHealth;
+            NotifyHealthChanged();
+
+            if (_animHandler != null)
+            {
+                _animHandler.SetBool("isAttackingMelee", false);
+                _animHandler.SetBool("isAttackingRange", false);
+                _animHandler.SetBool("isDead", false);
+            }
+
+            _teleportPhaseActive = false;
+            _hitCount = 0;
+        }
+    }
     private IEnumerator DamageFeedbackCoroutine() // Coroutine to handle temporary invulnerability and feedback after taking damage
     {
         _isInvulnerable = true;
 
-        if (_enemyController != null) _enemyController.enabled = false;
+        _enemyController?.PauseMovement();
         if (_meleeAttack != null) _meleeAttack.enabled = false;
+        if (_rangedAttack != null) _rangedAttack.enabled = false;
 
         yield return StartCoroutine(_feedbackHandler.PlayFeedback());
 
         if (!_isDead)
         {
-            if (_enemyController != null) _enemyController.enabled = true;
+            _enemyController?.ResumeMovement();
             if (_meleeAttack != null) _meleeAttack.enabled = true;
+            if (_rangedAttack != null) _rangedAttack.enabled = true;
+
+            if (!_enemyController.HasSeenPlayer)
+            {
+                _enemyController.GetComponent<EnemyStateMachine>().ChangeState(new EnemyPatrolState());
+            }
         }
 
         _isInvulnerable = false;
@@ -100,29 +155,56 @@ public class EnemyHealth : HealthSystem
 
         OnEnemyDied?.Invoke(this);
 
+        if (_collider != null)
+            _collider.enabled = false;
+
         if (_agent != null)
         {
             _agent.isStopped = true;
             _agent.velocity = Vector3.zero;
+            _agent.ResetPath();
         }
-        if (_enemyController != null) _enemyController.enabled = false;
-        if (_meleeAttack != null) _meleeAttack.enabled = false;
-
-        Transform target = null;
 
         if (_enemyController != null)
         {
-            target = _enemyController.currentTarget;
+            _enemyController.enabled = false;
+
+            var stateMachine = _enemyController.GetComponent<EnemyStateMachine>();
+            if (stateMachine != null)
+                stateMachine.enabled = false;
         }
-        Vector2 direction = Vector2.zero;
-        if (target != null)
-            direction = ((Vector2)(target.position - transform.position)).normalized;
+
+        if (_meleeAttack != null) _meleeAttack.enabled = false;
+        if (_rangedAttack != null) _rangedAttack.enabled = false;
+
+        Vector2 direction = Vector2.right;
+        if (_enemyController?.currentTarget != null)
+        {
+            direction = ((Vector2)(_enemyController.currentTarget.position - transform.position)).normalized;
+        }
+        else if (_enemyController != null)
+        {
+            direction = _enemyController.LastLookDirection;
+        }
 
         _animHandler.SetBool("isDead", true);
         _animHandler.SetFloat("LastX", direction.x);
         _animHandler.SetFloat("LastY", direction.y);
 
-        StartCoroutine(ReturnToPoolAfterDelay(1.5f));
+        StartCoroutine(HandleDeathSequence());
+    }
+    private IEnumerator HandleDeathSequence()
+    {
+        yield return new WaitForSeconds(1.45f);
+
+        if (triggersGameEndOnDeath)
+        {
+            Debug.Log("Boss Dead");
+            GameManager.Instance.EndGame();
+            yield return new WaitForSeconds(1f);
+        }
+
+        PoolManager.Instance.ReturnToPool(gameObject);
     }
 
     private IEnumerator ReturnToPoolAfterDelay(float delay) // Coroutine to return the enemy to the pool after a delay

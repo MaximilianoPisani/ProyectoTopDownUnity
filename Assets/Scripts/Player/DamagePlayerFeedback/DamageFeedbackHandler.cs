@@ -7,15 +7,11 @@ public class DamageFeedbackHandler : MonoBehaviour
     [SerializeField] private float _invulnerabilityDuration = 1f;
     [SerializeField] private float _flashInterval = 0.1f;
 
-    private PlayerController _playerController;
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
-        _playerController = GetComponent<PlayerController>();
-        if (_playerController == null)
-            Debug.LogWarning("Missing PlayerController ");
 
         _rb = GetComponent<Rigidbody2D>();
         if (_rb == null) 
@@ -28,8 +24,6 @@ public class DamageFeedbackHandler : MonoBehaviour
 
     public IEnumerator PlayFeedback() // Coroutine to play damage feedback for the player (invulnerability + flashing)
     {
-        if (_playerController != null)
-            _playerController.enabled = false;
 
         float elapsed = 0f;
 
@@ -47,10 +41,6 @@ public class DamageFeedbackHandler : MonoBehaviour
 
         if (_spriteRenderer != null)
             _spriteRenderer.enabled = true;
-
-        if (_playerController != null)
-            _playerController.enabled = true;
-
       
     }
 }

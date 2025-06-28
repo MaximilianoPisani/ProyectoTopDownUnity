@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 11504112293777458}
   - component: {fileID: 6163520163939087647}
-  - component: {fileID: 3993278116658956332}
   - component: {fileID: -1428753930370611442}
   - component: {fileID: 5905749795121673719}
+  - component: {fileID: 2684368417135436444}
   m_Layer: 0
   m_Name: ProjectileEnemyRanged
   m_TagString: Untagged
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3993278116658956332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3451036600101726497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb63f482f2184f94989dd609801c111a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-1428753930370611442
 Rigidbody2D:
   serializedVersion: 4
@@ -158,6 +146,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25129893, y: 0.0696174}
+  m_Offset: {x: 0.27728894, y: 0.0696174}
   serializedVersion: 2
-  m_Radius: 0.42998028
+  m_Radius: 0.452947
+--- !u!114 &2684368417135436444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451036600101726497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b6852a0a0f70e4e9c0ac27b816a352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Weapon
   - Wall
+  - TilemapCollision
   layers:
   - Default
   - TransparentFX

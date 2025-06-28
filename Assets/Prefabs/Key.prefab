@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1728587316827896275}
   - component: {fileID: 3505136866135259841}
   - component: {fileID: 6770491914900058058}
+  - component: {fileID: 1792607507311304292}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -27,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4002421255780511634}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -102.64, y: -21.54, z: 0}
-  m_LocalScale: {x: 0.8570012, y: 0.8613755, z: 1.1886}
+  m_LocalScale: {x: 0.79701114, y: 0.8355343, z: 1.1886}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 0a7648fc77ec7ff4bb4d31d192f1dbc4, type: 3}
+  m_Color: {r: 0.81886786, g: 0.7746002, b: 0.047896, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,8 +122,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.875, y: 1.875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,9 +131,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
+    - - {x: 0.6147868, y: -0.18982801}
+      - {x: 0.6140123, y: 0.10548514}
+      - {x: 0.034650862, y: 0.10651258}
+      - {x: -0.03998973, y: 0.28560624}
+      - {x: -0.26852146, y: 0.30259156}
+      - {x: -0.5157776, y: 0.2498601}
+      - {x: -0.56086844, y: -0.030347027}
       - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+      - {x: -0.39733073, y: -0.3535582}
+      - {x: -0.17414677, y: -0.35497314}
+      - {x: 0.013490975, y: -0.18920669}
   m_UseDelaunayMesh: 0
 --- !u!114 &6770491914900058058
 MonoBehaviour:
@@ -146,4 +155,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97513491c5c5ce9418d5320590d945a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyID: goldenKey
+  _keyID: Key_Safe
+--- !u!114 &1792607507311304292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4002421255780511634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09370b6c97427344ca5672fd177367a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blinkSpeed: 1.7
+  _alphaMin: 0.6
+  _alphaMax: 2

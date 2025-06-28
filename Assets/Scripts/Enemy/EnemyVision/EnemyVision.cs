@@ -10,18 +10,15 @@ public class EnemyVision : MonoBehaviour
     public EnemyMeleeAttack enemyMeleeAttack;
     public EnemyRangedAttack enemyRangedAttack;
 
-
     private void Start()
     {
-        Collider2D col = GetComponent<Collider2D>();
+        var col = GetComponent<Collider2D>();
         col.isTrigger = true;
 
         if (enemyController == null)
             enemyController = GetComponentInParent<EnemyController>();
-
         if (enemyMeleeAttack == null)
             enemyMeleeAttack = GetComponentInParent<EnemyMeleeAttack>();
-
         if (enemyRangedAttack == null)
             enemyRangedAttack = GetComponentInParent<EnemyRangedAttack>();
     }
@@ -32,8 +29,7 @@ public class EnemyVision : MonoBehaviour
         {
             if (enemyController.currentTarget == null)
             {
-                if (enemyController != null)
-                    enemyController.OnTargetEnterVision(other.transform);
+                enemyController?.OnTargetEnterVision(other.transform);
                 if (enemyMeleeAttack != null)
                     enemyMeleeAttack.SetTarget(other.transform);
                 if (enemyRangedAttack != null)
@@ -41,12 +37,12 @@ public class EnemyVision : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit2D(Collider2D other) // Called when another collider exits the trigger collider attached to this object.
+
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if (enemyController != null)
-                enemyController.OnTargetExitVision();
+            enemyController?.OnTargetExitVision();
             if (enemyMeleeAttack != null)
                 enemyMeleeAttack.SetTarget(null);
             if (enemyRangedAttack != null)

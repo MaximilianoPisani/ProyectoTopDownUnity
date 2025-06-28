@@ -19,11 +19,15 @@ public class EnemyController : MonoBehaviour
     private bool _isMovementEnabled = true;
     private bool _isMoving;
     private bool _hasSeenPlayer = false;
+    private Vector2 _lastLookDirection = Vector2.up;
+
+    public Vector2 LastLookDirection => _lastLookDirection;
     public bool HasSeenPlayer => _hasSeenPlayer;
     public bool shouldChasePlayer => _shouldChasePlayer;
 
     private void Awake()
     {
+
         agent = GetComponent<NavMeshAgent>();
         animHandler = GetComponent<AnimationControllerHandler>();
         _stateMachine = GetComponent<EnemyStateMachine>();
@@ -44,18 +48,13 @@ public class EnemyController : MonoBehaviour
 
         if (factory is MeleeEnemyFactory)
         {
-            _shouldChasePlayer = true; 
+            _shouldChasePlayer = true;
             attackStrategy = new MeleeAttackStrategy(this);
         }
         else if (factory is RangedEnemyFactory)
         {
-            _shouldChasePlayer = false; 
+            _shouldChasePlayer = false;
             attackStrategy = new RangedAttackStrategy(this);
-        }
-        else if (factory is BossEnemyFactory)
-        {
-            _shouldChasePlayer = true; 
-            attackStrategy = new ComboAttackStrategy(this);
         }
         else
         {
@@ -86,6 +85,57 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void SetShouldChasePlayer(bool value)
+    {
+        _shouldChasePlayer = value;
+
+        if (_shouldChasePlayer)
+            ResumeMovement();
+        else
+            PauseMovement();
+    }
+
+    public bool ShouldChasePlayer
+    {
+        get => _shouldChasePlayer;
+        set => _shouldChasePlayer = value;
+    }
+
+    public void UpdateLookDirection(Vector2 direction)
+    {
+        if (direction.sqrMagnitude > 0.001f)
+        {
+            _lastLookDirection = direction.normalized;
+        }
+    }
+    public void PauseMovement()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+        SetMoving(false);
+    }
+
+    public void ResumeMovement()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = false;
+        }
+    }
+    public void StopMovement()
+    {
+        _isMovementEnabled = false;
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+        }
+        SetMoving(false);
+    }
+
     public IAttackStrategy GetAttackStrategy() => attackStrategy;
 
     public void SetAttackStrategy(IAttackStrategy strategy)
@@ -99,14 +149,7 @@ public class EnemyController : MonoBehaviour
     {
         currentTarget = target;
 
-        if (_shouldChasePlayer)
-        {
-            _stateMachine.ChangeState(new EnemyChaseState());
-        }
-        else
-        {
-            _stateMachine.ChangeState(new EnemyAttackState());
-        }
+        _stateMachine.ChangeState(new EnemyAttackState());
     }
 
     public void OnTargetExitVision()

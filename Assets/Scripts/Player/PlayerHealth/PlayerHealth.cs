@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerHealth : HealthSystem
 {
@@ -14,6 +15,8 @@ public class PlayerHealth : HealthSystem
     private AnimationControllerHandler _animatorHandler;
     private Rigidbody2D _rb;
     private bool _isInvulnerable = false;
+
+    public static event Action OnPlayerDied;
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
@@ -65,6 +68,14 @@ public class PlayerHealth : HealthSystem
         }
     }
 
+    public void Heal(int amount)
+    {
+        if (IsDead()) return;
+
+        health = Mathf.Min(health + amount, maxHealth);
+        NotifyHealthChanged();
+    }
+
     private IEnumerator PlayDamageFeedback() // Coroutine to handle temporary invulnerability and visual feedback
     {
         _isInvulnerable = true;
@@ -79,6 +90,7 @@ public class PlayerHealth : HealthSystem
 
     protected override void Die()
     {
+        OnPlayerDied?.Invoke();
         StartCoroutine(HandleDeath());
     }
 
@@ -105,7 +117,7 @@ public class PlayerHealth : HealthSystem
             _attackRanged.enabled = false;
        
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
 
         Respawn();

@@ -52,7 +52,6 @@ public class EnemyPatrolState : IEnemyState
 
     public void UpdateState() // Called every frame while the enemy is in the patrol state
     {
- 
         if (_patrolPoints == null || _patrolPoints.Length == 0) return;
         if (_agent == null) return;
         if (_enemy == null || _enemy.animHandler == null) return;
@@ -67,12 +66,15 @@ public class EnemyPatrolState : IEnemyState
                 _waitTimer = 0f;
                 _currentPatrolIndex = (_currentPatrolIndex + 1) % _patrolPoints.Length;
                 GoToNextPoint();
-                _enemy.animHandler.SetBool("Moving", true);
             }
         }
 
         UpdateDirectionAnimation();
+
+
+        _enemy.animHandler.SetBool("Moving", _agent.velocity.sqrMagnitude > 0.01f);
     }
+
     public void ExitState() // Called when exiting the patrol state
     {
         if (_enemy == null || _enemy.animHandler == null)
@@ -101,6 +103,8 @@ public class EnemyPatrolState : IEnemyState
             _enemy.animHandler.SetFloat("Y", vel.y);
             _enemy.animHandler.SetFloat("LastX", vel.x);
             _enemy.animHandler.SetFloat("LastY", vel.y);
+
+            _enemy.UpdateLookDirection(vel); 
         }
     }
 }

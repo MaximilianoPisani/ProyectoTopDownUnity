@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f8939cff12d19943a21e5e58bf15717
+guid: b6324863142185e4e899b075ab5c2947
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,15 +117,15 @@ TextureImporter:
         y: 77
         width: 47
         height: 77
-      alignment: 9
-      pivot: {x: 0.7632733, y: 0.42796245}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2719f3c1f643552478a660405f60fa03
-      internalID: -1315843365
+      spriteID: 8db8be4fd73762b48b17aac53c25f156
+      internalID: 326599142
       vertices: []
       indices: 
       edges: []
@@ -138,15 +138,15 @@ TextureImporter:
         y: 77
         width: 47
         height: 77
-      alignment: 9
-      pivot: {x: 0.6951857, y: 0.4196505}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b0f2701652baf54f99027cf9b1ebead
-      internalID: 250990030
+      spriteID: f8cc4ba02ebd4a040ba4920648bc548c
+      internalID: -1700731395
       vertices: []
       indices: 
       edges: []
@@ -159,15 +159,15 @@ TextureImporter:
         y: 77
         width: 47
         height: 77
-      alignment: 9
-      pivot: {x: 0.6997249, y: 0.41410917}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e472bfb1d0b65348bfc2a260568fd80
-      internalID: -1038935127
+      spriteID: bb91de24f7c79e642a2b29df937bd06b
+      internalID: 946004355
       vertices: []
       indices: 
       edges: []
@@ -180,15 +180,15 @@ TextureImporter:
         y: 0
         width: 47
         height: 77
-      alignment: 9
-      pivot: {x: 0.7405775, y: 0.39471442}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d24c0078b7ae26c4cae83f1d27484684
-      internalID: -1488110386
+      spriteID: c2cb09fa7ad53514b8312d25d191e71a
+      internalID: 764564441
       vertices: []
       indices: 
       edges: []
@@ -201,15 +201,15 @@ TextureImporter:
         y: 0
         width: 47
         height: 77
-      alignment: 9
-      pivot: {x: 0.68610704, y: 0.3947143}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d58150d227074f46a18dbd5f028095b
-      internalID: 1654445111
+      spriteID: 1fcc3044afa1b464cbb8a741d21f8180
+      internalID: -977817130
       vertices: []
       indices: 
       edges: []
@@ -222,15 +222,15 @@ TextureImporter:
         y: 0
         width: 47
         height: 77
-      alignment: 9
-      pivot: {x: 0.70426404, y: 0.41410917}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 659daf815bc9ec34695d4b3d05379bdd
-      internalID: 1182831723
+      spriteID: 5a7ff5e76c2b35443a5c5add4d4ecc87
+      internalID: 1067061036
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      anim-boss-attackLeft-Sheet_0: -1315843365
-      anim-boss-attackLeft-Sheet_1: 250990030
-      anim-boss-attackLeft-Sheet_2: -1038935127
-      anim-boss-attackLeft-Sheet_3: -1488110386
-      anim-boss-attackLeft-Sheet_4: 1654445111
-      anim-boss-attackLeft-Sheet_5: 1182831723
+      anim-boss-attackLeft-Sheet_0: 326599142
+      anim-boss-attackLeft-Sheet_1: -1700731395
+      anim-boss-attackLeft-Sheet_2: 946004355
+      anim-boss-attackLeft-Sheet_3: 764564441
+      anim-boss-attackLeft-Sheet_4: -977817130
+      anim-boss-attackLeft-Sheet_5: 1067061036
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
