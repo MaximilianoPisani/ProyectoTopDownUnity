@@ -8,7 +8,15 @@ public class PlayerMeleeAttack : AttackMelee
     private float _bufferTime = 0.1f;
     private float _bufferTimer = 0f;
 
-    private bool _isAlive = true;
+    private PlayerAttackController _attackController;
+    private WeaponManager _weaponManager;
+
+    private void Start()
+    {
+        _attackController = GetComponent<PlayerAttackController>();
+        _weaponManager = GetComponent<WeaponManager>();
+    }
+
     private void Update()
     {
         if (!_isAlive) return;
@@ -21,46 +29,54 @@ public class PlayerMeleeAttack : AttackMelee
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (HasWeaponEquipped())
+            if (HasMeleeWeaponEquipped())
             {
-                TryAttack();
-            }
-            else
-            {
-                _bufferedAttack = true;
-                _bufferTimer = _bufferTime;
+                if (_attackController.CanAttack(AttackType.Melee))
+                {
+                    TryAttack();
+                }
+                else
+                {
+                    _bufferedAttack = true;
+                    _bufferTimer = _bufferTime;
+                }
             }
         }
 
         if (_bufferedAttack)
         {
             _bufferTimer -= Time.deltaTime;
-
             if (_bufferTimer <= 0f)
             {
                 _bufferedAttack = false;
             }
-            else if (HasWeaponEquipped())
+            else if (_attackController.CanAttack(AttackType.Melee))
             {
                 TryAttack();
                 _bufferedAttack = false;
             }
         }
     }
-    public void ResetAttackInput()
-    {
-        _bufferedAttack = false;
-        _bufferTimer = 0f;
 
-        if (animHandler != null)
-        {
-            animHandler.SetBool("isAttacking", false);
-        }
+    private bool HasMeleeWeaponEquipped()
+    {
+        return _weaponManager != null && _weaponManager.meleeWeapon != null;
     }
 
-    private bool HasWeaponEquipped()
+    public override void TryAttack()
     {
-        return GetComponent<WeaponManager>().currentWeapon != null;
+        if (!canAttack || !_isAlive) return;
+        if (_attackController.isAttacking && _attackController.currentAttack == AttackType.Melee) return;
+        if (!IsCooldownReady()) return;
+
+        base.TryAttack();
+        _attackController.StartAttack(AttackType.Melee);
+    }
+
+
+    public void OnMeleeAnimationEnd()
+    {
+        _attackController.EndAttack(AttackType.Melee);
     }
 
     public override void ApplyDamage()

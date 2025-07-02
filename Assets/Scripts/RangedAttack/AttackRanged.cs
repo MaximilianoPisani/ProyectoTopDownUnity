@@ -45,7 +45,7 @@ public class AttackRanged : MonoBehaviour //#TEST
         Invoke(nameof(ResetAttack), rangedAttackData.Cooldown);
     }
 
-    public void EndAttack()
+    public void EndAttacks() 
     {
         animHandler.SetBool("isAttackingRange", false);
     }

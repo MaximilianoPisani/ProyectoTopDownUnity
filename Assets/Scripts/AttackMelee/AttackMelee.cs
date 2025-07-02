@@ -11,7 +11,7 @@ public class AttackMelee : MonoBehaviour
     protected AnimationControllerHandler animHandler;
     protected Vector2 lastLookDirection;
     private float _lastAttackTime;
-    private bool _isAlive = true;
+    protected bool _isAlive = true;
     protected bool canAttack = true;
     [SerializeField] private float _attackOffsetMultiplier = 0.5f;
     private void Awake()
@@ -36,7 +36,7 @@ public class AttackMelee : MonoBehaviour
         _isAlive = state;
     }
 
-    public void TryAttack() // Attempt to initiate an attack if possible 
+    public virtual void TryAttack() // Attempt to initiate an attack if possible 
     {
         if (!canAttack || !_isAlive) return;
         if (Time.time < _lastAttackTime + meleeAttackData.Cooldown) return;
@@ -77,6 +77,10 @@ public class AttackMelee : MonoBehaviour
                 health.TakeDamage(Mathf.RoundToInt(meleeAttackData.Damage));
             }
         }
+    }
+    public bool IsCooldownReady()
+    {
+        return Time.time >= _lastAttackTime + meleeAttackData.Cooldown;
     }
 
     private void OnDrawGizmosSelected() // Draws a gizmo in the editor to visualize the attack range

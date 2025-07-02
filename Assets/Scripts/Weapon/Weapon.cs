@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
+public enum WeaponType
+{
+    Melee,
+    Ranged
+}
+
 public class Weapon : MonoBehaviour
 {
     public string weaponName;
     public bool isEquipped = false;
 
-    [SerializeField] private string _animatorFlag; // "HasSword" o "HasShotgun"
+    [SerializeField] private string _animatorFlag;
+    [SerializeField] private WeaponType _weaponType;
 
     private bool _isPlayerInRange = false;
     private GameObject _playerInRange;
 
     public string AnimatorFlag => _animatorFlag;
+    public WeaponType weaponType => _weaponType;
 
     private void Update()
     {
@@ -48,12 +56,16 @@ public class Weapon : MonoBehaviour
         WeaponManager weaponManager = _playerInRange.GetComponent<WeaponManager>();
         if (weaponManager != null)
         {
-            if (weaponManager.currentWeapon != null)
+            GameObject currentWeapon = _weaponType == WeaponType.Melee
+                ? weaponManager.meleeWeapon
+                : weaponManager.rangedWeapon;
+
+            if (currentWeapon != null)
             {
-                Weapon current = weaponManager.currentWeapon.GetComponent<Weapon>();
+                Weapon current = currentWeapon.GetComponent<Weapon>();
                 if (current != null && current.weaponName == weaponName)
                 {
-                    Debug.Log("You already have this weapon equipped ");
+                    Debug.Log("You already have this weapon equipped");
                     return;
                 }
             }
@@ -62,7 +74,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Player does not have WeaponManager ");
+            Debug.LogWarning("Player does not have WeaponManager");
         }
     }
 }

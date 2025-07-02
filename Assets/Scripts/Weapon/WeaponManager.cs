@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject currentWeapon;
+    public GameObject meleeWeapon;
+    public GameObject rangedWeapon;
+
     private AnimationControllerHandler _animator;
 
     [SerializeField] private Transform _weaponDropPoint;
@@ -13,60 +15,62 @@ public class WeaponManager : MonoBehaviour
     {
         _animator = GetComponent<AnimationControllerHandler>();
         if (_animator == null)
-        {
-            Debug.LogError("Missing AnimationControllerHandler ");
-        }
+            Debug.LogError("Missing AnimationControllerHandler");
 
         if (_weaponDropPoint == null)
-        {
             _weaponDropPoint = this.transform;
-        }
     }
 
     public void EquipWeapon(GameObject newWeapon)
     {
-        if (currentWeapon != null)
+        Weapon weaponScript = newWeapon.GetComponent<Weapon>();
+        if (weaponScript == null) return;
+
+        GameObject oldWeapon = null;
+
+        if (weaponScript.weaponType == WeaponType.Melee)
         {
-            DropWeapon();
+            oldWeapon = meleeWeapon;
+            meleeWeapon = newWeapon;
+        }
+        else if (weaponScript.weaponType == WeaponType.Ranged)
+        {
+            oldWeapon = rangedWeapon;
+            rangedWeapon = newWeapon;
         }
 
-        currentWeapon = newWeapon;
-        Weapon weaponScript = currentWeapon.GetComponent<Weapon>();
-
-        if (weaponScript != null)
+        if (oldWeapon != null)
         {
-            weaponScript.isEquipped = true;
-            _animator.SetBool(weaponScript.AnimatorFlag, true);
+            DropWeapon(oldWeapon);
         }
 
-        
-        currentWeapon.SetActive(false);
+        weaponScript.isEquipped = true;
+        _animator.SetBool(weaponScript.AnimatorFlag, true);
+        newWeapon.SetActive(false);
     }
 
-    public void DropWeapon()
+    public void DropWeapon(GameObject weaponToDrop)
     {
-        if (currentWeapon != null)
+        if (weaponToDrop == null) return;
+
+        Weapon weaponScript = weaponToDrop.GetComponent<Weapon>();
+        if (weaponScript != null)
         {
-            Weapon weaponScript = currentWeapon.GetComponent<Weapon>();
-            if (weaponScript != null)
-            {
-                weaponScript.isEquipped = false;
-                _animator.SetBool(weaponScript.AnimatorFlag, false);
-            }
-
-       
-            currentWeapon.transform.SetParent(null);
-            currentWeapon.transform.position = _weaponDropPoint.position;
-
-            currentWeapon.SetActive(true); 
-
-            Collider2D collider = currentWeapon.GetComponent<Collider2D>();
-            if (collider != null)
-            {
-                collider.enabled = true;
-            }
-
-            currentWeapon = null;
+            weaponScript.isEquipped = false;
+            _animator.SetBool(weaponScript.AnimatorFlag, false);
         }
+
+        weaponToDrop.transform.SetParent(null);
+        weaponToDrop.transform.position = _weaponDropPoint.position;
+        weaponToDrop.SetActive(true);
+
+        Collider2D collider = weaponToDrop.GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = true;
+
+        if (weaponScript.weaponType == WeaponType.Melee)
+            meleeWeapon = null;
+        else if (weaponScript.weaponType == WeaponType.Ranged)
+            rangedWeapon = null;
     }
 }

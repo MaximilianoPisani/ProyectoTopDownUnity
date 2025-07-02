@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRangedAttack : AttackRanged //#TEST
+public class PlayerRangedAttack : AttackRanged
 {
     private WeaponManager _weaponManager;
+    private PlayerAttackController _attackController;
+
     [SerializeField] private RangedAttackData _attackData;
+
+    private bool _bufferedAttack = false;
+    private float _bufferTime = 0.1f;
+    private float _bufferTimer = 0f;
 
     protected override void Awake()
     {
         base.Awake();
         _weaponManager = GetComponent<WeaponManager>();
+        _attackController = GetComponent<PlayerAttackController>();
+
         if (_weaponManager == null)
             Debug.LogWarning("WeaponManager not found on player.");
 
@@ -21,11 +29,32 @@ public class PlayerRangedAttack : AttackRanged //#TEST
     {
         base.Update();
 
-        if (Input.GetMouseButtonDown(0) && IsCurrentWeaponRanged())
+        if (Input.GetMouseButtonDown(1) && IsRangedWeaponEquipped())
         {
-            TryAttack();
+            if (_attackController.CanAttack(AttackType.Ranged) && canAttack)
+            {
+                TryAttack();
+            }
+            else if (!_attackController.CanAttack(AttackType.Ranged))
+            {
+                _bufferedAttack = true;
+                _bufferTimer = _bufferTime;
+            }
         }
 
+        if (_bufferedAttack)
+        {
+            _bufferTimer -= Time.deltaTime;
+            if (_bufferTimer <= 0f)
+            {
+                _bufferedAttack = false;
+            }
+            else if (_attackController.CanAttack(AttackType.Ranged) && canAttack)
+            {
+                TryAttack();
+                _bufferedAttack = false;
+            }
+        }
     }
 
     public override void TryAttack()
@@ -33,18 +62,22 @@ public class PlayerRangedAttack : AttackRanged //#TEST
         if (!canAttack || !isAlive) return;
 
         canAttack = false;
-        animHandler.SetBool("isAttackingRange", true);
+        _attackController.StartAttack(AttackType.Ranged);
 
-        ShootCardinal(); 
+        ShootCardinal();
+        Shoot();
 
         Invoke(nameof(ResetAttack), rangedAttackData.Cooldown);
     }
 
+    public void ResetAttackInput()
+    {
+        canAttack = true;
+    }
+
     private void ShootCardinal()
     {
-
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
 
         if (inputDir == Vector2.zero)
         {
@@ -60,30 +93,19 @@ public class PlayerRangedAttack : AttackRanged //#TEST
             inputDir = inputDir.y > 0 ? Vector2.up : Vector2.down;
         }
 
-
         lastLookDirection = inputDir;
-
-        Shoot(); 
     }
 
-    public void ResetAttackInput()
+    private bool IsRangedWeaponEquipped()
     {
-        if (animHandler != null)
-        {
-            animHandler.SetBool("isAttackingRange", false);
-        }
+        if (_weaponManager == null || _weaponManager.rangedWeapon == null) return false;
 
-        CancelInvoke(nameof(ResetAttack));
-        canAttack = true;
+        Weapon current = _weaponManager.rangedWeapon.GetComponent<Weapon>();
+        return current != null && current.weaponType == WeaponType.Ranged;
     }
 
-    private bool IsCurrentWeaponRanged()
+    public void OnRangedAnimationEnd()
     {
-        if (_weaponManager == null || _weaponManager.currentWeapon == null) return false;
-
-        Weapon currentWeaponScript = _weaponManager.currentWeapon.GetComponent<Weapon>();
-        if (currentWeaponScript == null) return false;
-
-        return currentWeaponScript.weaponName == "Shotgun";
+        _attackController.EndAttack(AttackType.Ranged);
     }
 }
