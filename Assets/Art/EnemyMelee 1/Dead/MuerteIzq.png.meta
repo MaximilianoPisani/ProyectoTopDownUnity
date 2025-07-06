@@ -113,12 +113,12 @@ TextureImporter:
       name: MuerteIzq_0
       rect:
         serializedVersion: 2
-        x: 83
+        x: 0
         y: 0
-        width: 139
-        height: 211
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.5955006, y: 0.405631}
+      pivot: {x: 0.74561405, y: 0.4415205}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: MuerteIzq_1
       rect:
         serializedVersion: 2
-        x: 306
+        x: 222
         y: 0
-        width: 138
-        height: 211
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.55771536, y: 0.46854368}
+      pivot: {x: 0.7163743, y: 0.51169604}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: MuerteIzq_2
       rect:
         serializedVersion: 2
-        x: 527
+        x: 444
         y: 0
-        width: 140
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.7397662, y: 0.50000006}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: MuerteIzq_3
       rect:
         serializedVersion: 2
-        x: 749
+        x: 666
         y: 0
-        width: 140
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.72807026, y: 0.43567267}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: MuerteIzq_4
       rect:
         serializedVersion: 2
-        x: 972
+        x: 888
         y: 0
-        width: 134
-        height: 193
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.5636205, y: 0.5063102}
+      pivot: {x: 0.70467836, y: 0.48245624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: MuerteIzq_5
       rect:
         serializedVersion: 2
-        x: 1193
+        x: 1110
         y: 0
-        width: 139
-        height: 181
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.7397664, y: 0.4532165}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: MuerteIzq_6
       rect:
         serializedVersion: 2
-        x: 1409
+        x: 1332
         y: 0
-        width: 145
-        height: 139
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.52519786, y: 0.6664691}
+      pivot: {x: 0.7280708, y: 0.4415205}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: MuerteIzq_7
       rect:
         serializedVersion: 2
-        x: 1631
+        x: 1554
         y: 0
-        width: 146
-        height: 139
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.51668435, y: 0.70151466}
+      pivot: {x: 0.69298273, y: 0.47660837}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: MuerteIzq_8
       rect:
         serializedVersion: 2
-        x: 1871
+        x: 1776
         y: 0
-        width: 121
-        height: 103
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.4295483, y: 0.85471416}
+      pivot: {x: 0.7456137, y: 0.43567267}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: MuerteIzq_9
       rect:
         serializedVersion: 2
-        x: 2057
-        y: 23
-        width: 163
-        height: 110
+        x: 1998
+        y: 0
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.48505798, y: 0.67714214}
+      pivot: {x: 0.69298327, y: 0.4298246}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

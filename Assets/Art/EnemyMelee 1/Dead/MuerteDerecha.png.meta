@@ -115,10 +115,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 139
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.27192983, y: 0.41228077}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: MuerteDerecha_1
       rect:
         serializedVersion: 2
-        x: 221
+        x: 222
         y: 0
-        width: 140
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.2660818, y: 0.42397672}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: MuerteDerecha_2
       rect:
         serializedVersion: 2
-        x: 443
+        x: 444
         y: 0
-        width: 140
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.254386, y: 0.46491244}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,10 +178,10 @@ TextureImporter:
         serializedVersion: 2
         x: 666
         y: 0
-        width: 138
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.28362542, y: 0.42397648}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: MuerteDerecha_4
       rect:
         serializedVersion: 2
-        x: 893
+        x: 888
         y: 0
-        width: 134
-        height: 193
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.2719295, y: 0.39473695}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: MuerteDerecha_5
       rect:
         serializedVersion: 2
-        x: 1109
+        x: 1110
         y: 0
-        width: 140
-        height: 181
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 222
+        height: 222
+      alignment: 9
+      pivot: {x: 0.25438628, y: 0.4181286}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: MuerteDerecha_6
       rect:
         serializedVersion: 2
-        x: 1331
+        x: 1332
         y: 0
-        width: 145
-        height: 139
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.46147293, y: 0.7250664}
+      pivot: {x: 0.24853845, y: 0.4298246}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: MuerteDerecha_7
       rect:
         serializedVersion: 2
-        x: 1553
+        x: 1554
         y: 0
-        width: 146
-        height: 139
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.46938878, y: 0.7089902}
+      pivot: {x: 0.20175529, y: 0.4532165}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: MuerteDerecha_8
       rect:
         serializedVersion: 2
-        x: 1781
+        x: 1776
         y: 0
-        width: 121
-        height: 103
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.49076504, y: 0.9447485}
+      pivot: {x: 0.21345039, y: 0.4298246}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -303,11 +303,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1998
-        y: 23
-        width: 162
-        height: 110
+        y: 0
+        width: 222
+        height: 222
       alignment: 9
-      pivot: {x: 0.47241363, y: 0.6929872}
+      pivot: {x: 0.2251477, y: 0.3596493}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
