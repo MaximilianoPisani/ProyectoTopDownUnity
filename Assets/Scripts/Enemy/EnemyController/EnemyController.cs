@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform[] _patrolPoints;
     [SerializeField] private float _patrolWaitDuration = 1.5f;
     [SerializeField] private bool _shouldChasePlayer = true;
-
+    [SerializeField] private float _prepareAttackDuration = 0.5f; 
     public AnimationControllerHandler animHandler { get; private set; }
     public NavMeshAgent agent { get; private set; }
     public Transform currentTarget { get; private set; }
@@ -21,9 +21,12 @@ public class EnemyController : MonoBehaviour
     private bool _hasSeenPlayer = false;
     private Vector2 _lastLookDirection = Vector2.up;
 
+
+
     public Vector2 LastLookDirection => _lastLookDirection;
     public bool HasSeenPlayer => _hasSeenPlayer;
     public bool shouldChasePlayer => _shouldChasePlayer;
+    public float PrepareAttackDuration => _prepareAttackDuration;
 
     private void Awake()
     {
@@ -83,6 +86,16 @@ public class EnemyController : MonoBehaviour
         {
             _stateMachine.UpdateState();
         }
+    }
+    public void StartAttackSequence()
+    {
+        var stateMachine = GetComponent<EnemyStateMachine>();
+
+        if (stateMachine.GetCurrentState() is EnemyPrepareAttackState ||
+            stateMachine.GetCurrentState() is EnemyAttackState)
+            return;
+
+        stateMachine.ChangeState(new EnemyPrepareAttackState(_prepareAttackDuration));
     }
 
     public void SetShouldChasePlayer(bool value)
@@ -148,8 +161,7 @@ public class EnemyController : MonoBehaviour
     public void OnTargetEnterVision(Transform target)
     {
         currentTarget = target;
-
-        _stateMachine.ChangeState(new EnemyAttackState());
+        StartAttackSequence();
     }
 
     public void OnTargetExitVision()

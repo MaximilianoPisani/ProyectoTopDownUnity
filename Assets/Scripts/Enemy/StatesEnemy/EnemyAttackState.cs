@@ -35,20 +35,16 @@ public class EnemyAttackState : IEnemyState //#TEST
         if (distance > attackRange)
         {
             if (_enemy.shouldChasePlayer)
-            {
-
                 _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyChaseState());
-            }
             else
-            {
-
                 _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyPatrolState());
-            }
+
             return;
         }
 
         _attackStrategy.ExecuteAttack(_enemy);
     }
+
     public void ExitState()
     {
         _enemy.agent.isStopped = false;

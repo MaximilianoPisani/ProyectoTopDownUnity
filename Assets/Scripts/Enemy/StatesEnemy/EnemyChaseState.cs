@@ -49,7 +49,7 @@ public class EnemyChaseState : IEnemyState
             {
                 _enemy.agent.isStopped = true;
                 _enemy.agent.velocity = Vector3.zero;
-                _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyAttackState());
+                _enemy.StartAttackSequence(); 
                 return;
             }
 

@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPrepareAttackState : MonoBehaviour
+public class EnemyPrepareAttackState : IEnemyState
 {
     private EnemyController _enemy;
-    private float _prepareTimer;
-    private float _prepareDuration = 0.5f; 
     private IAttackStrategy _attackStrategy;
+    private float _prepareTimer;
+    private float _prepareDuration;
+
+    public EnemyPrepareAttackState(float prepareDuration)
+    {
+        _prepareDuration = prepareDuration;
+    }
 
     public void EnterState(EnemyController enemy)
     {
         _enemy = enemy;
-        _prepareTimer = 0f;
         _attackStrategy = _enemy.GetAttackStrategy();
+        _prepareTimer = 0f;
 
-        _enemy.agent.isStopped = true;
-        _enemy.agent.velocity = Vector3.zero;
-        _enemy.agent.ResetPath();
+        _enemy.PauseMovement();
 
         _enemy.animHandler.SafeSetBool("isAttackingMelee", false);
         _enemy.animHandler.SafeSetBool("isAttackingRange", false);
@@ -32,15 +35,14 @@ public class EnemyPrepareAttackState : MonoBehaviour
         }
 
         float distance = Vector2.Distance(_enemy.transform.position, _enemy.currentTarget.position);
-        float attackRange = _attackStrategy.GetAttackRange();
-
-        if (distance > attackRange)
+        if (distance > _attackStrategy.GetAttackRange())
         {
             _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyChaseState());
             return;
         }
 
         _prepareTimer += Time.deltaTime;
+
         if (_prepareTimer >= _prepareDuration)
         {
             _enemy.GetComponent<EnemyStateMachine>().ChangeState(new EnemyAttackState());
