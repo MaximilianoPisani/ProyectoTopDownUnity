@@ -15,7 +15,7 @@ MonoBehaviour:
   _attackRange: 15
   _damage: 25
   _cooldown: 1.2
-  _projectileSpeed: 13
+  _projectileSpeed: 11.8
   _projectilePrefab: {fileID: 3451036600101726497, guid: 0b2d5872e9f7cd944ac09faa0c494cb1, type: 3}
   TargetLayer:
     serializedVersion: 2

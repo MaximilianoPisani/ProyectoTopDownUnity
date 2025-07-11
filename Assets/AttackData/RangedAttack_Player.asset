@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c1afacd262be24193e50fa7b80b71d, type: 3}
   m_Name: RangedAttack_Player
   m_EditorClassIdentifier: 
-  _attackRange: 9
+  _attackRange: 7.5
   _damage: 25
   _cooldown: 2
   _projectileSpeed: 21.5

@@ -68,10 +68,16 @@ public class EnemyRangedAttack : AttackRanged //#TEST
             Quaternion.identity
         );
 
+
         Projectile projectile = projectileGO.GetComponent<Projectile>();
         if (projectile != null)
         {
             projectile.Initialize(direction, rangedAttackData, gameObject);
         }
+    }
+    public void ForceStopAttack()
+    {
+        canAttack = false;
+        animHandler?.SetBool("isAttackingRange", false);
     }
 }

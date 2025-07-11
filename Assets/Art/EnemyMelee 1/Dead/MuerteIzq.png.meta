@@ -118,7 +118,7 @@ TextureImporter:
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.74561405, y: 0.4415205}
+      pivot: {x: 0.72371316, y: 0.43785745}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: MuerteIzq_1
       rect:
         serializedVersion: 2
-        x: 222
+        x: 225
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.7163743, y: 0.51169604}
+      pivot: {x: 0.7237131, y: 0.42957175}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: MuerteIzq_2
       rect:
         serializedVersion: 2
-        x: 444
+        x: 453
         y: 0
-        width: 222
+        width: 216
         height: 222
       alignment: 9
-      pivot: {x: 0.7397662, y: 0.50000006}
+      pivot: {x: 0.7319985, y: 0.43785745}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: MuerteIzq_3
       rect:
         serializedVersion: 2
-        x: 666
+        x: 672
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.72807026, y: 0.43567267}
+      pivot: {x: 0.71542716, y: 0.4130005}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: MuerteIzq_4
       rect:
         serializedVersion: 2
-        x: 888
+        x: 896
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.70467836, y: 0.48245624}
+      pivot: {x: 0.72371256, y: 0.40885755}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: MuerteIzq_5
       rect:
         serializedVersion: 2
-        x: 1110
+        x: 1119
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.7397664, y: 0.4532165}
+      pivot: {x: 0.68642724, y: 0.45028606}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: MuerteIzq_6
       rect:
         serializedVersion: 2
-        x: 1332
+        x: 1342
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.7280708, y: 0.4415205}
+      pivot: {x: 0.66156995, y: 0.39228615}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: MuerteIzq_7
       rect:
         serializedVersion: 2
-        x: 1554
+        x: 1566
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.69298273, y: 0.47660837}
+      pivot: {x: 0.6739986, y: 0.40885755}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,13 +281,13 @@ TextureImporter:
       name: MuerteIzq_8
       rect:
         serializedVersion: 2
-        x: 1776
+        x: 1789
         y: 0
-        width: 222
+        width: 219
         height: 222
       alignment: 9
-      pivot: {x: 0.7456137, y: 0.43567267}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.6947132, y: 0.41714326}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -302,12 +302,12 @@ TextureImporter:
       name: MuerteIzq_9
       rect:
         serializedVersion: 2
-        x: 1998
+        x: 2012
         y: 0
-        width: 222
+        width: 208
         height: 222
       alignment: 9
-      pivot: {x: 0.69298327, y: 0.4298246}
+      pivot: {x: 0.64085597, y: 0.37985766}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

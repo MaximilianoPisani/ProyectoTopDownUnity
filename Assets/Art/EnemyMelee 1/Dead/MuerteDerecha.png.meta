@@ -118,7 +118,7 @@ TextureImporter:
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.27192983, y: 0.41228077}
+      pivot: {x: 0.25701335, y: 0.44917116}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.2660818, y: 0.42397672}
+      pivot: {x: 0.21734206, y: 0.41073948}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +160,7 @@ TextureImporter:
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.254386, y: 0.46491244}
+      pivot: {x: 0.20990361, y: 0.36362982}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.28362542, y: 0.42397648}
+      pivot: {x: 0.22478038, y: 0.39338332}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.2719295, y: 0.39473695}
+      pivot: {x: 0.23717794, y: 0.45165056}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,10 +220,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1110
         y: 0
-        width: 222
+        width: 219
         height: 222
       alignment: 9
-      pivot: {x: 0.25438628, y: 0.4181286}
+      pivot: {x: 0.16651325, y: 0.5148768}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: MuerteDerecha_6
       rect:
         serializedVersion: 2
-        x: 1332
+        x: 1330
         y: 0
-        width: 222
+        width: 219
         height: 222
       alignment: 9
-      pivot: {x: 0.24853845, y: 0.4298246}
+      pivot: {x: 0.1714725, y: 0.45908892}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: MuerteDerecha_7
       rect:
         serializedVersion: 2
-        x: 1554
+        x: 1552
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.20175529, y: 0.4532165}
+      pivot: {x: 0.11940346, y: 0.48016426}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: MuerteDerecha_8
       rect:
         serializedVersion: 2
-        x: 1776
+        x: 1775
         y: 0
-        width: 222
+        width: 221
         height: 222
       alignment: 9
-      pivot: {x: 0.21345039, y: 0.4298246}
+      pivot: {x: 0.10355961, y: 0.4564052}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: MuerteDerecha_9
       rect:
         serializedVersion: 2
-        x: 1998
+        x: 1997
         y: 0
         width: 222
         height: 222
       alignment: 9
-      pivot: {x: 0.2251477, y: 0.3596493}
+      pivot: {x: 0.19483632, y: 0.4277961}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
